@@ -16,11 +16,11 @@ DROP TABLE Mechanic;
 DROP TABLE Refers;
 DROP TABLE Existing;
 DROP TABLE ServiceVisit;
+DROP TABLE Vehicle;
 DROP TABLE Package;
 DROP TABLE ServiceAdvisor;
 DROP TABLE Employee;
 DROP TABLE Skill;
-DROP TABLE Vehicle;
 DROP TABLE Customer;
 
 CREATE TABLE Customer(custID varchar(30) NOT NULL,
@@ -128,6 +128,9 @@ CREATE TABLE MechanicSkill(skillName varchar(30),
                             FOREIGN KEY(skillName) REFERENCES Skill(skillName),
                             FOREIGN KEY(empID) REFERENCES Mechanic(empID));
 
+CREATE TABLE Package(packageName varchar(30),
+                     PRIMARY KEY(packageName)); 
+
 CREATE TABLE Vehicle(VIN varchar(50),
                      make varchar(30),
                      model varchar(30),
@@ -135,13 +138,10 @@ CREATE TABLE Vehicle(VIN varchar(50),
                      mileage varchar(30),
                      maintenanceInterval varchar(30),
                      custID varchar(30),
+                     packageName varchar (30),
                      PRIMARY KEY(VIN),
-                     FOREIGN KEY(custID) REFERENCES Customer(custID));
-                     
-CREATE TABLE Package(packageName varchar(30),
-                     VIN varchar(50),
-                     PRIMARY KEY(packageName),
-                     FOREIGN KEY(VIN) REFERENCES Vehicle(VIN));                     
+                     FOREIGN KEY(custID) REFERENCES Customer(custID),
+                     FOREIGN KEY(packageName) REFERENCES Package(packageName));                    
         
 CREATE TABLE Item(itemName varchar(30),
                   packageName varchar(30),
