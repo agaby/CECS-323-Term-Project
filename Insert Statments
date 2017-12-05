@@ -1,0 +1,87 @@
+Insert into Existing(projectMileage, custID)
+                Values( 10055, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 11256, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 3050, "CCC");        
+Insert into Existing(projectMileage, custID)
+                Values( 1679, "CCC");   
+Insert into Existing(projectMileage, custID)
+                Values( 1339, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 9020, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 1900, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 1534, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 15490, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 14320, "CCC");
+Insert into Existing(projectMileage, custID)
+                Values( 1984, "CCC");
+-- Pospective
+Insert Into Prospective(deadProspect, ExistingCustID, custID)
+                Values( null, "CCC", "III");
+Insert Into Prospective(deadProspect, ExistingCustID, custID)
+                Values( null, "CCC", "III");
+Insert Into Prospective(deadProspect, ExistingCustID, custID)
+                Values( null, "CCC", "III");
+Insert Into Prospective(deadProspect, ExistingCustID, custID)
+                Values( null, "CCC", "III");
+Insert Into Prospective(deadProspect, ExistingCustID, custID)
+                Values( null, "CCC", "III");
+-- Contact
+Insert Into Contact( how, dateContact,custID)
+                Values( "Intenet", "2/2/2015", "CCC");
+Insert Into Contact( how, dateContact,custID)
+                Values( "Intenet", "1/5/2014", "CCC");
+Insert Into Contact( how, dateContact,custID)
+                Values( "Magazine", "4/2/2016", "CCC");
+Insert Into Contact( how, dateContact,custID)
+                Values( "Magazine", "7/2/2017", "CCC");
+Insert Into Contact( how, dateContact,custID)
+                Values( "Internet", "12/7/2014", "CCC");
+-- Premir
+Insert Into Premire (fee, dateJoined, custID)
+                Values(10, "12/14/2014", "CCC");
+Insert Into Premire (fee, dateJoined, custID)
+                Values(10, "1/14/2012", "CCC");
+Insert Into Premire (fee, dateJoined, custID)
+                Values(10, "3/14/2017", "CCC");
+Insert Into Premire (fee, dateJoined, custID)
+                Values(10, "2/9/2013", "CCC");
+Insert Into Premire (fee, dateJoined, custID)
+                Values(10, "7/22/2011", "CCC");
+
+-- PaymentHistory
+Insert Into PaymentHistory( payDate, paid, custID ) 
+            Values( "2/12/2015", "150", "CCC");
+Insert Into PaymentHistory( payDate, paid, custID ) 
+            Values( "1/2/2013", "150", "CCC");
+Insert Into PaymentHistory( payDate, paid, custID ) 
+            Values( "10/22/2016", "170", "CCC");
+Insert Into PaymentHistory( payDate, paid, custID ) 
+            Values( "1/2/2013", "150", "CCC");
+Insert Into PaymentHistory( payDate, paid, custID ) 
+            Values( "1/2/2013", "150", "CCC");
+
+-- Steady 
+Insert into Steady(custID)
+        Value("CCC");
+        Value("CCC");
+        Value("CCC");
+        Value("CCC");
+        Value("CCC");
+
+-- Steady Email
+Insert into SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( "10/20/2015", "1200", "1 hour", "68", "CCC");
+Insert into SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( "11/10/201", "1200", "0.5 hour", "30", "CCC");
+Insert into SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( "9/12/2012", "1350", "2 hour", "180", "CCC");
+Insert into SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( "10/20/2011", "1890", "1 hour", "90", "CCC");
+Insert into SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( "6/17/2010", "1290", "0.75 hour", "75", "CCC");
