@@ -1,4 +1,26 @@
+-- DROP STATEMENTS FOR ENTIRE DB
+DROP TABLE Address;
 DROP TABLE Corporation;
+DROP TABLE Private;
+DROP TABLE PaymentHistory;
+DROP TABLE Premier;
+DROP TABLE SteadyEmail;
+DROP TABLE Steady;
+DROP TABLE Contact;
+DROP TABLE MechanicSkill;
+DROP TABLE Prospective;
+DROP TABLE Mentorship;
+DROP TABLE OrderLine;
+DROP TABLE Item;
+DROP TABLE Mechanic;
+DROP TABLE Refers;
+DROP TABLE Existing;
+DROP TABLE ServiceVisit;
+DROP TABLE Package;
+DROP TABLE ServiceAdvisor;
+DROP TABLE Employee;
+DROP TABLE Skill;
+DROP TABLE Vehicle;
 DROP TABLE Customer;
 
 CREATE TABLE Customer(custID varchar(30) NOT NULL,
@@ -147,5 +169,30 @@ CREATE TABLE OrderLine(serviceDate varchar(30),
                        FOREIGN KEY(serviceDate) REFERENCES ServiceVisit(serviceDate),
                        FOREIGN KEY(itemName) REFERENCES Item(itemName),
                        FOREIGN KEY(empID) REFERENCES Mechanic(empID));                                     
-                     
+
+--View Statments for all Classes                     
+SELECT * FROM Address;
+SELECT * FROM Contact; 
+SELECT * FROM Corporation;
+SELECT * FROM Customer;
+SELECT * FROM Employee;
+SELECT * FROM Existing;
+SELECT * FROM Item;
+SELECT * FROM Mechanic;
+SELECT * FROM MechanicSkill;
+SELECT * FROM Mentorship;
+SELECT * FROM OrderLine;
+SELECT * FROM Package;
+SELECT * FROM PaymentHistory;
+SELECT * FROM Premier;
+SELECT * FROM Private;
+SELECT * FROM Prospective;
+SELECT * FROM Refers;
+SELECT * FROM ServiceAdvisor;
+SELECT * FROM ServiceVisit;
+SELECT * FROM Skill;
+SELECT * FROM Steady;
+SELECT * FROM SteadyEmail;
+SELECT * FROM Vehicle;
+
                      
