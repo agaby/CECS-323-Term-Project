@@ -1,1 +1,34 @@
+--Insert into 'Customer' table
+--custID, custName, custPhone, custEmail
+INSERT INTO Customers VALUES('C0000', 'Neil Medina', '562-123-4567', 'Medina@gmail.com' );
+INSERT INTO Customers VALUES('C0001', 'Jean Yang', '562-123-4568', 'Yang@gmail.com' );
+INSERT INTO Customers VALUES('C0002', 'Anel Ruiz', '562-123-4568', 'Ruiz@gmail.com' );
+INSERT INTO Customers VALUES('C0003', 'Andrew Gonzalez', '562-123-4570', 'Gonzalez@gmail.com' );
+INSERT INTO Customers VALUES('C0004', 'Alfredo Tapia', '562-123-4571', 'Tapia@gmail.com' );
+INSERT INTO Customers VALUES('C0005', 'William Threlkeld', '562-123-4572', 'Threlkeld@gmail.com' );
+INSERT INTO Customers VALUES('C0006', 'Mary Wynn', '562-123-4573', 'Wynn@gmail.com' );
+INSERT INTO Customers VALUES('C0007', 'Susan Muenier', '562-123-4574', 'Muenier@gmail.com' );
+       
+--Insert into 'Corporation' table
+--corporationName, custID
+INSERT INTO Corporation VALUES('Limos Galore','C0000');
+INSERT INTO Corporation VALUES('Cars4Rent','C0000');
+INSERT INTO Corporation VALUES('Cars For Kids','C0001');
+INSERT INTO Corporation VALUES('Jeeps n Beeps','C0004');
+INSERT INTO Corporation VALUES('Old Timey Cars','C0006');
 
+--Insert into 'Address' table
+--addressType, address, custID
+INSERT INTO Address VALUES('','');
+INSERT INTO Address VALUES('','');
+INSERT INTO Address VALUES('','');
+INSERT INTO Address VALUES('','');
+INSERT INTO Address VALUES('','');
+
+--Insert into 'Private' table
+--privateHomeAddress, custID
+INSERT INTO Private VALUE('','');
+INSERT INTO Private VALUE('','');
+INSERT INTO Private VALUE('','');
+INSERT INTO Private VALUE('','');
+INSERT INTO Private VALUE('','');
