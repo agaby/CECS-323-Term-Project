@@ -8,6 +8,8 @@ INSERT INTO Customers VALUES('C0004', 'Alfredo Tapia', '562-123-4571', 'Tapia@gm
 INSERT INTO Customers VALUES('C0005', 'William Threlkeld', '562-123-4572', 'Threlkeld@gmail.com' );
 INSERT INTO Customers VALUES('C0006', 'Mary Wynn', '562-123-4573', 'Wynn@gmail.com' );
 INSERT INTO Customers VALUES('C0007', 'Susan Muenier', '562-123-4574', 'Muenier@gmail.com' );
+INSERT INTO Customers VALUES('C0008', 'Gerald Smith', '562-123-4575', 'Smith@gmail.com' );
+
        
 --Insert into 'Corporation' table
 --corporationName, custID
@@ -19,16 +21,16 @@ INSERT INTO Corporation VALUES('Old Timey Cars','C0006');
 
 --Insert into 'Address' table
 --addressType, address, custID
-INSERT INTO Address VALUES('','');
-INSERT INTO Address VALUES('','');
-INSERT INTO Address VALUES('','');
-INSERT INTO Address VALUES('','');
-INSERT INTO Address VALUES('','');
+INSERT INTO Address VALUES('Home','123 Real St.','C0000');
+INSERT INTO Address VALUES('Work','124 Real St.','C0000');
+INSERT INTO Address VALUES('Home','125 Real St.','C0001');
+INSERT INTO Address VALUES('Work','126 Real St.','C0004');
+INSERT INTO Address VALUES('Event','127 Real St.','C0006');
 
 --Insert into 'Private' table
 --privateHomeAddress, custID
-INSERT INTO Private VALUE('','');
-INSERT INTO Private VALUE('','');
-INSERT INTO Private VALUE('','');
-INSERT INTO Private VALUE('','');
-INSERT INTO Private VALUE('','');
+INSERT INTO Private VALUE('123 BelView Ave.','C0002');
+INSERT INTO Private VALUE('123 Grady St.','C0003');
+INSERT INTO Private VALUE('123 Belmont St.','C0005');
+INSERT INTO Private VALUE('123 Boyd Ave.','C0007');
+INSERT INTO Private VALUE('123 Basics Wy.','C0008');
