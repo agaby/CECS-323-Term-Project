@@ -1,0 +1,145 @@
+--Adding values into employee table
+INSERT INTO Employee
+values('E0001','Amy Goodman','(542)632-4874','amy.goodman@gmail.com','$60878');
+INSERT INTO Employee
+values('E0002','Bernard Johnson','(714)947-2145','feelthebern@gmail.com','$58151');
+INSERT INTO Employee
+values('E0003','Kevin Nguyen','(318)585-4848','kevn5432@yahoo.com','$52,478');
+INSERT INTO Employee
+values('E0004','William Pham','(415) 525-4138','billypham5421@gmail.com','$56,874');
+INSERT INTO Employee
+values('E0005','Mark Hernandez','(714) 947-3377','markhernan123@gmail.com','$65,748');
+INSERT INTO Employee
+values('E0006','Billy Bush', '(760) 124-7154','bush4143657@gmail.com','$57,963');
+INSERT INTO Employee
+values('E0007','Bernie Trump','(184) 265-7815','bernMAGAYUGE@yahoo.com','$60,000 ');
+INSERT INTO Employee
+values('E0008','Chris Nguyen','(712) 944-2447','cnguyen976966@gmail.com','$62,877 ');
+INSERT INTO Employee
+values('E0009','Mimi Opkins','(200) 665-5959','mimiopkins184763@gmail.com','$64,125 ');
+INSERT INTO Employee
+values('E0010','Katherine Vu', '(716) 534-7122','kathy.v7654@yahoo.com','$62,111 ');
+INSERT INTO Employee
+values('E0011','Gary Gonzalez','(695) 852-9452','garyisBIG@gmail.com','$74,654 ');
+INSERT INTO Employee
+values('E0012','Kyle Davis','(423) 789-1235','kyletrumpsjames@yahoo.com','$70,544 ');
+INSERT INTO Employee
+values('E0013','James Davis','(666) 587-9941','james5547@gmail.com','$66,224');
+--Adding values into mechanic table
+INSERT INTO Mechanic
+values('CSU Long Beach','2/26/2014',0,0,'E0001');
+INSERT INTO Mechanic
+values('Cal Poly SLO','	6/14/2015',1,0,'E0002');
+INSERT INTO Mechanic
+values('Auburn University','12/11/2016',0,0,'E0003');
+INSERT INTO Mechanic
+values('Golden West College','5/15/2017',1,1,'E0004');
+INSERT INTO Mechanic
+values('UC Davis','10/14/2014',0,0,'E0005');
+INSERT INTO Mechanic
+values('University of Pennsylvania','11/19/2016',1,1,'E0006');
+INSERT INTO Mechanic
+values('CSU Long Beach','3/4/2015',0,0,'E0007');
+INSERT INTO Mechanic
+values('Florida State University','2/2/2017',1,	0,'E0008');
+INSERT INTO Mechanic
+values('Kent State University','7/20/2014',0,0,'E0009');
+INSERT INTO Mechanic
+values('Ohio State University','4/25/2017',1,1,'E0010');
+INSERT INTO Mechanic
+values('University of Southern California','12/1/2016',	0,0,'E0011');
+INSERT INTO Mechanic
+values('UC Los Angeles','6/11/2015',1,0,'E0012');
+INSERT INTO Mechanic
+values('Cal Poly SLO','	6/15/2017',0,0,'E0013');
+--Adding values into mentorship table
+INSERT INTO Mentorship
+values('10/15/2015','10/30/2015','E0001','E0100');
+INSERT INTO Mentorship
+values('5/5/2015','6/1/2015','E0002','E0102');
+INSERT INTO Mentorship
+values('3/6/2016','3/27/2016','E0003','E0104');
+INSERT INTO Mentorship
+values('2/24/2016','3/31/2016','E0004','E0106');
+INSERT INTO Mentorship
+values('8/16/2015','9/20/2015','E0005','E0108');
+INSERT INTO Mentorship
+values('4/18/2015','5/1/2015','E0006','E0110');
+INSERT INTO Mentorship
+values('5/23/2016','6/3/2016','E0007','E0112',);
+INSERT INTO Mentorship
+values('1/29/2016','2/16/2016','E0008','E0114');
+INSERT INTO Mentorship
+values('2/27/2017','3/17/2017','E0009','E0116');
+INSERT INTO Mentorship
+values('4/11/2017','5/1/2017','E0010','E0118');
+INSERT INTO Mentorship
+values('3/14/2017','4/3/2017','E0011','E0120',);
+INSERT INTO Mentorship
+values('10/12/2017','11/11/2017','E0012','E0122');
+INSERT INTO Mentorship
+values('7/19/2015','8/20/2015','E0013','E0124');
+--Adding values into skill table
+INSERT INTO Skill
+values('fluid levels');
+INSERT INTO Skill
+values( 'brake linings,drums,pads,disks');
+INSERT INTO Skill
+values('engine oil and oil filter');
+INSERT INTO Skill
+values('maintenance reminder light');
+INSERT INTO Skill
+values('exterior light bulbs');
+INSERT INTO Skill
+values( 'ignition wires');
+INSERT INTO Skill
+values('fuel lines and fuel cap gasket');
+INSERT INTO Skill
+values('radiator and condenser');
+INSERT INTO Skill
+values('engine coolant');
+INSERT INTO Skill
+values('exhaust system');
+INSERT INTO Skill
+values('spark plugs');
+INSERT INTO Skill
+values('multi-point inspection');
+INSERT INTO Skill
+values('tires');
+--Adding values into mechanicSkill table
+INSERT INTO MechanicSkill
+values('spark plugs','10','E0001');
+INSERT INTO MechanicSkill
+values('engine oil and oil filter','3','E0001'	);
+INSERT INTO MechanicSkill
+values( 'brake linings,drums,pads,disks','7','E0001');
+INSERT INTO MechanicSkill
+values('maintenance reminder light','4','E0002');
+INSERT INTO MechanicSkill
+values('exterior light bulbs','2','E0002');
+INSERT INTO MechanicSkill
+values( 'ignition wires','10','E0002');
+INSERT INTO MechanicSkill
+values( 'ignition wires','5','E0003');
+INSERT INTO MechanicSkill
+values( 'brake linings,drums,pads,disks','1','E0003');
+INSERT INTO MechanicSkill
+values('fuel lines and fuel cap gasket','9','E0003');
+INSERT INTO MechanicSkill
+values('maintenance reminder light','7','E0004');
+INSERT INTO MechanicSkill
+values('radiator and condenser','10','E0004');
+INSERT INTO MechanicSkill
+values('exhaust system','8','E0004');
+INSERT INTO MechanicSkill
+values('engine coolant','9','E0005');
+INSERT INTO MechanicSkill
+values('engine oil and oil filter','9','E0005');
+INSERT INTO MechanicSkill
+values('tires','8','E0005');
+INSERT INTO MechanicSkill
+values('fluid levels','10','E0006');
+INSERT INTO MechanicSkill
+values('exhaust system','5','E0006');
+INSERT INTO MechanicSkill
+values('exterior light bulbs','	8','E0006');
