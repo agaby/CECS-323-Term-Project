@@ -270,6 +270,14 @@ INSERT INTO ServiceVisit VALUES('Truck', '2015-04-17', '5TFMW5F10AX154486','1250
 INSERT INTO ServiceVisit VALUES('Truck', '2016-02-20', '5TFMW5F10AX154486','141500','6','570','');
 INSERT INTO ServiceVisit VALUES('Truck', '2016-03-21', '5TFMW5F10AX154486','142767','2','120', '');
 
+--Insert VALUES into Package Table
+INSERT INTO Package VALUES('Ford F-Series');
+INSERT INTO Package VALUES('Roadbike');
+INSERT INTO Package VALUES('Luxury');
+INSERT INTO Package VALUES('Classic');
+INSERT INTO Package VALUES('Mileage');
+INSERT INTO Package VALUES('Truck');
+INSERT INTO Package VALUES('Highway');
 
 --Insert VALUES into Vehicles Table
 INSERT INTO Vehicle VALUES('WAULH64BX1N160442','Audi','A6 Avant','Silver','52000','1000','C0002','Luxury');
@@ -290,17 +298,6 @@ INSERT INTO Vehicle VALUES('JF2AX75BXGD390130','Subaru','XT','Orange','155346','
 INSERT INTO Vehicle VALUES('1RF51474361043360','Roadmaster','Rail Monocoque','Gray','225500','6000','C0001','Highway');
 INSERT INTO Vehicle VALUES('1HTSLABL91H371211','International','4700','Gray','350000','10000','C0000','Highway');
 INSERT INTO Vehicle VALUES('1FUY3MCB8WL875938','Freightliner','FLD112','White','662220','10000','C0004','Highway');
-
-
---Insert VALUES into Package Table
-INSERT INTO Package VALUES('Ford F-Series');
-INSERT INTO Package VALUES('Roadbike');
-INSERT INTO Package VALUES('Luxury');
-INSERT INTO Package VALUES('Classic');
-INSERT INTO Package VALUES('Mileage');
-INSERT INTO Package VALUES('Truck');
-INSERT INTO Package VALUES('Highway');
-
 
 --Insert VALUES into Item Table
 ##Check this for validity
