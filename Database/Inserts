@@ -43,7 +43,6 @@ INSERT INTO Customer VALUES('C000E', 'Allsion Morton',    '562-123-4581', 'Morto
 --Insert into 'Corporation' table
 --corporationName, custID
 INSERT INTO Corporation VALUES('Limos Galore',   'C0000');
-INSERT INTO Corporation VALUES('Cars4Rent',      'C0000');
 INSERT INTO Corporation VALUES('Cars For Kids',  'C0001');
 INSERT INTO Corporation VALUES('Jeeps n Beeps',  'C0004');
 INSERT INTO Corporation VALUES('Old Timey Cars', 'C0006');
@@ -173,11 +172,6 @@ INSERT INTO Mechanic VALUES('Ohio State University',            '4/25/2017',1,1,
 INSERT INTO Mechanic VALUES('University of Southern California','12/1/2016',0,0,'E0011');
 INSERT INTO Mechanic VALUES('UC Los Angeles',                   '6/11/2015',1,0,'E0012');
 INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '6/15/2017',0,0,'E0013');
-INSERT INTO Mechanic VALUES('Colorado School of Mines',         '2/14/2016',1,1,'E0100');
-INSERT INTO Mechanic VALUES('University of Hawaii',             '6/26/2016',0,0,'E0102');
-INSERT INTO Mechanic VALUES('Cal Tech Institute',               '8/24/2015',1,0,'E0104');
-INSERT INTO Mechanic VALUES('Cal Poly Pomona',                  '5/26/2014',1,1,'E0106');
-INSERT INTO Mechanic VALUES('San Diego State University',       '4/4/2017',0,0,'E0108');
 
 --Insert VALUES into Mentorship Table
 --these work
