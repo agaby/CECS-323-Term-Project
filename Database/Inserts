@@ -1,0 +1,434 @@
+SELECT * FROM Address;
+SELECT * FROM Contact; 
+SELECT * FROM Corporation;
+SELECT * FROM Customer;
+SELECT * FROM Employee;
+SELECT * FROM Existing;
+SELECT * FROM Item;
+SELECT * FROM Mechanic;
+SELECT * FROM MechanicSkill;
+SELECT * FROM Mentorship;
+SELECT * FROM OrderLine;
+SELECT * FROM Package;
+SELECT * FROM PaymentHistory;
+SELECT * FROM Premier;
+SELECT * FROM Private;
+SELECT * FROM Prospective;
+SELECT * FROM Refers;
+SELECT * FROM ServiceAdvisor;
+SELECT * FROM ServiceVisit;
+SELECT * FROM Skill;
+SELECT * FROM Steady;
+SELECT * FROM SteadyEmail;
+SELECT * FROM Vehicle;
+--Insert into 'Customer' table
+--custID, custName, custPhone, custEmail
+INSERT INTO Customer VALUES('C0000', 'Neil Medina',       '562-123-4567', 'Medina@gmail.com' ); --C,E
+INSERT INTO Customer VALUES('C0001', 'Jean Yang',         '562-123-4568', 'Yang@gmail.com' ); --C,E
+INSERT INTO Customer VALUES('C0002', 'Anel Ruiz',         '562-123-4568', 'Ruiz@gmail.com' ); --P,E
+INSERT INTO Customer VALUES('C0003', 'Andrew Gonzalez',   '562-123-4570', 'Gonzalez@gmail.com' ); --P,E
+INSERT INTO Customer VALUES('C0004', 'Alfredo Tapia',     '562-123-4571', 'Tapia@gmail.com' ); --C,E
+INSERT INTO Customer VALUES('C0005', 'William Threlkeld', '562-123-4572', 'Threlkeld@gmail.com' ); --P,E
+INSERT INTO Customer VALUES('C0006', 'Mary Wynn',         '562-123-4573', 'Wynn@gmail.com' ); --C,PR
+INSERT INTO Customer VALUES('C0007', 'Susan Muenier',     '562-123-4574', 'Muenier@gmail.com' ); --P,PR
+INSERT INTO Customer VALUES('C0008', 'Gerald Smith',      '562-123-4575', 'Smith@gmail.com' ); --P,PR
+INSERT INTO Customer VALUES('C0009', 'Karen Smith',       '562-123-4576', 'KSmith@gmail.com' ); --P,PR
+INSERT INTO Customer VALUES('C000A', 'Matt Belamy',       '562-123-4577', 'Belamy@gmail.com' ); --P,PR
+INSERT INTO Customer VALUES('C000B', 'Chris Wyde' ,       '562-123-4578', 'Wyde@gmail.com' ); --P,E
+INSERT INTO Customer VALUES('C000C', 'Ellie Wolfe',       '562-123-4579', 'Wolfe@gmail.com' ); --P,E
+INSERT INTO Customer VALUES('C000D', 'Sarah Writer',      '562-123-4580', 'Writer@gmail.com' ); --P,E
+INSERT INTO Customer VALUES('C000E', 'Allsion Morton',    '562-123-4581', 'Morton@gmail.com' ); --P,E
+
+       
+--Insert into 'Corporation' table
+--corporationName, custID
+INSERT INTO Corporation VALUES('Limos Galore',   'C0000');
+INSERT INTO Corporation VALUES('Cars4Rent',      'C0000');
+INSERT INTO Corporation VALUES('Cars For Kids',  'C0001');
+INSERT INTO Corporation VALUES('Jeeps n Beeps',  'C0004');
+INSERT INTO Corporation VALUES('Old Timey Cars', 'C0006');
+
+--Insert into 'Address' table
+--addressType, address, custID
+INSERT INTO Address VALUES('Home', '123 Real St.', 'C0000');
+INSERT INTO Address VALUES('Work', '124 Real St.', 'C0000');
+INSERT INTO Address VALUES('Home', '125 Real St.', 'C0001');
+INSERT INTO Address VALUES('Work', '126 Real St.', 'C0004');
+INSERT INTO Address VALUES('Event','127 Real St.', 'C0006');
+
+--Insert into 'Private' table
+--privateHomeAddress, custID
+INSERT INTO Private VALUE('123 BelView Ave.','C0002');
+INSERT INTO Private VALUE('123 Grady St.',   'C0003');
+INSERT INTO Private VALUE('123 Belmont St.', 'C0005');
+INSERT INTO Private VALUE('123 Boyd Ave.',   'C0007');
+INSERT INTO Private VALUE('123 Basics Wy.',  'C0008');
+INSERT INTO Private VALUE('123 Coyotes Wy.', 'C0009');
+INSERT INTO Private VALUE('123 Road Wy.',    'C000A');
+
+--AGABYS-----------------------------------------------------------------------
+--Existing
+--ProjectMileage, custID 
+--OK
+INSERT INTO Existing(projectMileage, custID) VALUES( 10055, 'C0000'); --PR
+INSERT INTO Existing(projectMileage, custID) VALUES( 11256, 'C0001'); --PR
+INSERT INTO Existing(projectMileage, custID) VALUES( 3050,  'C0002'); --S     
+INSERT INTO Existing(projectMileage, custID) VALUES( 1679,  'C0003'); --S  
+INSERT INTO Existing(projectMileage, custID) VALUES( 1339,  'C0004'); --PR
+INSERT INTO Existing(projectMileage, custID) VALUES( 9020,  'C0005'); --PR
+INSERT INTO Existing(projectMileage, custID) VALUES( 1900,  'C000B'); --S
+INSERT INTO Existing(projectMileage, custID) VALUES( 1534,  'C000C'); --S
+INSERT INTO Existing(projectMileage, custID) VALUES( 15490, 'C000D'); --PR
+INSERT INTO Existing(projectMileage, custID) VALUES( 14320, 'C000E'); --S
+
+-- Prospective
+--deadProspect, existingCustID, custID
+--OK
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0000', 'C0006');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0001', 'C0007');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0002', 'C0008');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0003', 'C0009');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0004', 'C000A');
+
+-- Contact
+--OK
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2/2/2015',  'C0006');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '3/2/2015',  'C0006');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '1/5/2014',  'C0007');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '4/2/2016',  'C0008');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '7/2/2017',  'C0009');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '12/7/2014', 'C000A');
+
+-- Premier
+--OK
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '12/14/2014', 'C0000');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '1/14/2012',  'C0001');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '3/14/2017',  'C0004');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2/9/2013',   'C0005');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '7/22/2011',  'C000D');
+
+-- PaymentHistory
+--OK
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2/12/2015',  '150', 'C0000');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2/12/2016',  '150', 'C0000');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2/12/2017',  '150', 'C0000');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '1/2/2013',   '150', 'C0001');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '10/22/2016', '170', 'C0004');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '1/2/2013',   '150', 'C0005');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '1/2/2013',   '150', 'C000D');
+
+-- Steady 
+--OK
+INSERT INTO Steady(custID) VALUE ('C0002');
+INSERT INTO Steady(custID) VALUE ('C0003');
+INSERT INTO Steady(custID) VALUE ('C000B');
+INSERT INTO Steady(custID) VALUE ('C000C');
+INSERT INTO Steady(custID) VALUE ('C000E');
+
+-- Steady Email
+--OK
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '10/20/2015', '1200', '1 hour', '68', 'C0002');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '11/10/201', '1200', '0.5 hour', '30', 'C0003');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '9/12/2012', '1350', '2 hour', '180', 'C000B');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '10/20/2011', '1890', '1 hour', '90', 'C000C');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '6/17/2010', '1290', '0.75 hour', '75', 'C000E');
+
+--Minhkhoa------------------------------------------------------------------------------------------
+--Insert VALUES into Employee Table
+INSERT INTO Employee VALUES('E0001','Amy Goodman',     '(542)632-4874','amy.goodman@gmail.com','$60,878');
+INSERT INTO Employee VALUES('E0002','Bernard Johnson', '(714)947-2145','feelthebern@gmail.com','$58,151');
+INSERT INTO Employee VALUES('E0003','Kevin Nguyen',    '(318)585-4848','kevn5432@yahoo.com','$52,478');
+INSERT INTO Employee VALUES('E0004','William Pham',    '(415) 525-4138','billypham5421@gmail.com','$56,874');
+INSERT INTO Employee VALUES('E0005','Mark Hernandez',  '(714) 947-3377','markhernan123@gmail.com','$65,748');
+INSERT INTO Employee VALUES('E0006','Billy Bush',      '(760) 124-7154','bush4143657@gmail.com','$57,963');
+INSERT INTO Employee VALUES('E0007','Bernie Trump',    '(184) 265-7815','bernMAGAYUGE@yahoo.com','$60,000 ');
+INSERT INTO Employee VALUES('E0008','Chris Nguyen',    '(712) 944-2447','cnguyen976966@gmail.com','$62,877 ');
+INSERT INTO Employee VALUES('E0009','Mimi Opkins',     '(200) 665-5959','mimiopkins184763@gmail.com','$64,125 ');
+INSERT INTO Employee VALUES('E0010','Katherine Vu',    '(716) 534-7122','kathy.v7654@yahoo.com','$62,111 ');
+INSERT INTO Employee VALUES('E0011','Gary Gonzalez',   '(695) 852-9452','garyisBIG@gmail.com','$74,654 ');
+INSERT INTO Employee VALUES('E0012','Kyle Davis',      '(423) 789-1235','kyletrumpsjames@yahoo.com','$70,544 ');
+INSERT INTO Employee VALUES('E0013','James Davis',     '(666) 587-9941','james5547@gmail.com','$66,224');
+INSERT INTO Employee VALUES('E0100','Amy Tran',        '(752) 666-4218','amytran977@gmail.com','$80,547');
+INSERT INTO Employee VALUES('E0102','Michael Stratton','(254) 631-4901','stratton5555@gmail,com','$79,254');
+INSERT INTO Employee VALUES('E0104','Gaby Hernandez',  '(644) 945-1563','gaby214457@gmail.com','$82,666');
+INSERT INTO Employee VALUES('E0106','John Schad',      '(169) 547-2261','schad123456@gmail.com','$77,614');
+INSERT INTO Employee VALUES('E0108','Jonathan Miller', '(714) 677-0281','jonmiller789@gmail.com','$83,914');
+
+--Insert VALUES into Mechanic Table
+INSERT INTO Mechanic VALUES('CSU Long Beach',                   '2/26/2014',0,0,'E0001');
+INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '6/14/2015',1,0,'E0002');
+INSERT INTO Mechanic VALUES('Auburn University',                '12/11/2016',0,0,'E0003');
+INSERT INTO Mechanic VALUES('Golden West College',              '5/15/2017',1,1,'E0004');
+INSERT INTO Mechanic VALUES('UC Davis',                         '10/14/2014',0,0,'E0005');
+INSERT INTO Mechanic VALUES('University of Pennsylvania',       '11/19/2016',1,1,'E0006');
+INSERT INTO Mechanic VALUES('CSU Long Beach',                   '3/4/2015',0,0,'E0007');
+INSERT INTO Mechanic VALUES('Florida State University',         '2/2/2017',1,0,'E0008');
+INSERT INTO Mechanic VALUES('Kent State University',            '7/20/2014',0,0,'E0009');
+INSERT INTO Mechanic VALUES('Ohio State University',            '4/25/2017',1,1,'E0010');
+INSERT INTO Mechanic VALUES('University of Southern California','12/1/2016',0,0,'E0011');
+INSERT INTO Mechanic VALUES('UC Los Angeles',                   '6/11/2015',1,0,'E0012');
+INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '6/15/2017',0,0,'E0013');
+INSERT INTO Mechanic VALUES('Colorado School of Mines',         '2/14/2016',1,1,'E0100');
+INSERT INTO Mechanic VALUES('University of Hawaii',             '6/26/2016',0,0,'E0102');
+INSERT INTO Mechanic VALUES('Cal Tech Institute',               '8/24/2015',1,0,'E0104');
+INSERT INTO Mechanic VALUES('Cal Poly Pomona',                  '5/26/2014',1,1,'E0106');
+INSERT INTO Mechanic VALUES('San Diego State University',       '4/4/2017',0,0,'E0108');
+
+--Insert VALUES into Mentorship Table
+--these work
+INSERT INTO Mentorship VALUES('10/15/2015','10/30/2015','E0001','E0100');
+INSERT INTO Mentorship VALUES('5/5/2015','6/1/2015','E0002','E0102');
+INSERT INTO Mentorship VALUES('3/6/2016','3/27/2016','E0003','E0104');
+INSERT INTO Mentorship VALUES('2/24/2016','3/31/2016','E0004','E0106');
+INSERT INTO Mentorship VALUES('8/16/2015','9/20/2015','E0005','E0108');
+--do not work, need to add more VALUES into employee and mechanic table
+INSERT INTO Mentorship VALUES('4/18/2015','5/1/2015','E0006','E0110');
+INSERT INTO Mentorship VALUES('5/23/2016','6/3/2016','E0007','E0112',);
+INSERT INTO Mentorship VALUES('1/29/2016','2/16/2016','E0008','E0114');
+INSERT INTO Mentorship VALUES('2/27/2017','3/17/2017','E0009','E0116');
+INSERT INTO Mentorship VALUES('4/11/2017','5/1/2017','E0010','E0118');
+INSERT INTO Mentorship VALUES('3/14/2017','4/3/2017','E0011','E0120',);
+INSERT INTO Mentorship VALUES('10/12/2017','11/11/2017','E0012','E0122');
+INSERT INTO Mentorship VALUES('7/19/2015','8/20/2015','E0013','E0124');
+
+--Insert VALUES into Skill Table
+INSERT INTO Skill VALUES('fluid levels');
+INSERT INTO Skill VALUES('brake linings,drums,pads,disks');
+INSERT INTO Skill VALUES('engine oil and oil filter');
+INSERT INTO Skill VALUES('maintenance reminder light');
+INSERT INTO Skill VALUES('exterior light bulbs');
+INSERT INTO Skill VALUES('ignition wires');
+INSERT INTO Skill VALUES('fuel lines and fuel cap gasket');
+INSERT INTO Skill VALUES('radiator and condenser');
+INSERT INTO Skill VALUES('engine coolant');
+INSERT INTO Skill VALUES('exhaust system');
+INSERT INTO Skill VALUES('spark plugs');
+INSERT INTO Skill VALUES('multi-point inspection');
+INSERT INTO Skill VALUES('tires');
+
+--Insert VALUES into MechanicSkill Table
+INSERT INTO MechanicSkill VALUES('spark plugs','10','E0001');
+INSERT INTO MechanicSkill VALUES('engine oil and oil filter','3','E0001');
+INSERT INTO MechanicSkill VALUES('brake linings,drums,pads,disks','7','E0001');
+INSERT INTO MechanicSkill VALUES('multi-point inspection','7','E0002');
+INSERT INTO MechanicSkill VALUES('exterior light bulbs','2','E0002');
+INSERT INTO MechanicSkill VALUES('ignition wires','10','E0002');
+INSERT INTO MechanicSkill VALUES('ignition wires','5','E0003');
+INSERT INTO MechanicSkill VALUES('brake linings,drums,pads,disks','1','E0003');
+INSERT INTO MechanicSkill VALUES('fuel lines and fuel cap gasket','9','E0003');
+INSERT INTO MechanicSkill VALUES('maintenance reminder light','7','E0004');
+INSERT INTO MechanicSkill VALUES('radiator and condenser','10','E0004');
+INSERT INTO MechanicSkill VALUES('exhaust system','8','E0004');
+INSERT INTO MechanicSkill VALUES('engine coolant','9','E0005');
+INSERT INTO MechanicSkill VALUES('engine oil and oil filter','9','E0005');
+INSERT INTO MechanicSkill VALUES('tires','8','E0005');
+INSERT INTO MechanicSkill VALUES('fluid levels','10','E0006');
+INSERT INTO MechanicSkill VALUES('exhaust system','5','E0006');
+INSERT INTO MechanicSkill VALUES('exterior light bulbs','8','E0006');
+
+--Insert VALUES into ServiceVisit Table
+## Need Service Advisor IDs
+INSERT INTO ServiceVisit VALUES('F-Series', '2015-04-15', '1FDNF21L0YEB63640', '75500', '4', '360', 'E####');
+INSERT INTO ServiceVisit VALUES('F-Series', '2016-02-05', '1FDNF21L0YEB63640','87923','6', '540');
+INSERT INTO ServiceVisit VALUES('F-Series', '2016-06-02', '1FDNF21L0YEB63640','92432','14','1260');
+INSERT INTO ServiceVisit VALUES('F-Series', '2014-05-12', '1FDWF37R28EE54341','76000','4','360');
+INSERT INTO ServiceVisit VALUES('F-Series', '2016-03-01', '1FDWF37R28EE54341','122999','8','720');
+INSERT INTO ServiceVisit VALUES('F-Series', '2015-12-22', '1FTHX25G4VEA92613','62000','4','360');
+INSERT INTO ServiceVisit VALUES('F-Series', '2016-07-11', '1FTHX25G4VEA92613','67395','2','120');
+INSERT INTO ServiceVisit VALUES('Classic', '2015-04-16', '1FMCU9EG7AKC77905','94000','6','660');
+INSERT INTO ServiceVisit VALUES('Classic', '2016-01-25', '1G2NE52EX5M189919','21500','6','660');
+INSERT INTO ServiceVisit VALUES('Classic', '2016-05-10', '1G2NE52EX5M189919','25000','2','120');
+INSERT INTO ServiceVisit VALUES('Classic', '2016-07-03', '1G3NG52M3X6357971','181560','8','880');
+INSERT INTO ServiceVisit VALUES('Classic', '2016-07-27', '1G3NG52M3X6357971','182480','8','880');
+INSERT INTO ServiceVisit VALUES('Classic', '2015-08-24', '1GC1K1CG0BF215228','78500','2','120');
+INSERT INTO ServiceVisit VALUES('Classic', '2016-01-14', '1GC1K1CG0BF215228','81700','4','440');
+INSERT INTO ServiceVisit VALUES('Classic', '2016-02-17', '1GC1K1CG0BF215228','82000','6','660');
+INSERT INTO ServiceVisit VALUES('Classic', '2016-07-08', '1GC1K1CG0BF215228','85500','12','1320');
+INSERT INTO ServiceVisit VALUES('Classic', '2014-03-30', 'JNAUZU1J51A379582','98213','6','660');
+INSERT INTO ServiceVisit VALUES('Highway', '2016-04-18', '1FUY3MCB8WL875938','662220','20','7000', '');
+INSERT INTO ServiceVisit VALUES('Highway', '2016-08-23', '1HTSLABL91H371211','350000','20','7000', '');
+INSERT INTO ServiceVisit VALUES('Highway', '2015-06-28', '1RF51474361043360','225500','20','7000', '');
+INSERT INTO ServiceVisit VALUES('Luxury', '2016-05-13', 'WAULH64BX1N160442','51500','8','1280', '');
+INSERT INTO ServiceVisit VALUES('Luxury', '2016-07-21', 'WAULH64BX1N160442','52000','6','960', '');
+INSERT INTO ServiceVisit VALUES('Luxury', '2016-06-22', 'WBAAB5402E1044876','72000','12','1920', '');
+INSERT INTO ServiceVisit VALUES('Luxury', '2016-08-26', 'WBAAB5402E1044876','75000','6','960', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2014-03-25', '1FMCU01181KF81919','105500','6','570', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-01-20', '1FMCU01181KF81919','164150','8','760', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-03-14', '1FMCU01181KF81919','166200','2','120', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-06-12', '1FMCU01181KF81919','169333','16','1520', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-02-14', '1FMCU9EG7AKC77905','102500','8','760', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-05-23', '1FMCU9EG7AKC77905','105234','8','760', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2014-07-30', 'JF2AX75BXGD390130','142570','10','950', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-03-10', 'JF2AX75BXGD390130','150300','10','950', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-07-15', 'JF2AX75BXGD390130','155346','16','1520','');
+INSERT INTO ServiceVisit VALUES('Mileage', '2015-06-28', 'JNAUZU1J51A379582','119523','8','760', '');
+INSERT INTO ServiceVisit VALUES('Mileage', '2016-04-29', 'JNAUZU1J51A379582','133758','10','950', '');
+INSERT INTO ServiceVisit VALUES('Roadbike', '2014-09-10', '1HD1BML33TY095458','3100','4','600', '');
+INSERT INTO ServiceVisit VALUES('Roadbike', '2015-10-10', '1HD1BML33TY095458','3546','6','900', '');
+INSERT INTO ServiceVisit VALUES('Truck', '2015-02-06', '1GTFG15T231246626','85000','6','570', '');
+INSERT INTO ServiceVisit VALUES('Truck', '2016-02-07', '1GTFG15T231246626','110000','10','950','');
+INSERT INTO ServiceVisit VALUES('Truck', '2015-04-17', '5TFMW5F10AX154486','125000','8','760','');
+INSERT INTO ServiceVisit VALUES('Truck', '2016-02-20', '5TFMW5F10AX154486','141500','6','570','');
+INSERT INTO ServiceVisit VALUES('Truck', '2016-03-21', '5TFMW5F10AX154486','142767','2','120', '');
+
+
+--Insert VALUES into Vehicles Table
+INSERT INTO Vehicle VALUES('WAULH64BX1N160442','Audi','A6 Avant','Silver','52000','1000','C0002','Luxury');
+INSERT INTO Vehicle VALUES('WBAAB5402E1044876','BMW','3-Series','White','75000','1000','C0003','Luxury');
+INSERT INTO Vehicle VALUES('1FMCU9EG7AKC77905','Ford','Escape','Black','105234','2500','C0004','Mileage');
+INSERT INTO Vehicle VALUES('1FMCU01181KF81919','Ford','Escape','Gray','169333','2500','C0004','Mileage');
+INSERT INTO Vehicle VALUES('1HD1BML33TY095458','Harley-Davidson','FLSTF','Orange','3546','2750','C0005','Roadbike');
+INSERT INTO Vehicle VALUES('1G3NG52M3X6357971','Oldsmobile','Cutlass','White','182480','3000','C0007','Classic');
+INSERT INTO Vehicle VALUES('JNAUZU1J51A379582','Nissan','UD1400','Blue','133758','3500','C0008','Mileage');
+INSERT INTO Vehicle VALUES('1FDWF37R28EE54341','Ford','F-350','Dark Blue','122999','3500','C0009','F-Series');
+INSERT INTO Vehicle VALUES('1GC1K1CG0BF215228','Chevrolet','Silverado 3500HD','Black','85500','3500','C0006','Classic');
+INSERT INTO Vehicle VALUES('1G2NE52EX5M189919','Pontiac','Grand AM','Black','25000','3500','C0006','Classic');
+INSERT INTO Vehicle VALUES('1FDNF21L0YEB63640','Ford','F-250','White','92432','4000','C000A','F-Series');
+INSERT INTO Vehicle VALUES('1FTHX25G4VEA92613','Ford','F-250','Magenta','67395','4000','C000B','F-Series');
+INSERT INTO Vehicle VALUES('1GTFG15T231246626','GMC','Savana','Carbon','110000','4500','C000C','Truck');
+INSERT INTO Vehicle VALUES('5TFMW5F10AX154486','Toyota','Tundra','Graphite','142767','4500','C000D','Truck');
+INSERT INTO Vehicle VALUES('JF2AX75BXGD390130','Subaru','XT','Orange','155346','5000','C000E','Mileage');
+INSERT INTO Vehicle VALUES('1RF51474361043360','Roadmaster','Rail Monocoque','Gray','225500','6000','C0001','Highway');
+INSERT INTO Vehicle VALUES('1HTSLABL91H371211','International','4700','Gray','350000','10000','C0000','Highway');
+INSERT INTO Vehicle VALUES('1FUY3MCB8WL875938','Freightliner','FLD112','White','662220','10000','C0004','Highway');
+
+
+--Insert VALUES into Package Table
+INSERT INTO Package VALUES('Ford F-Series');
+INSERT INTO Package VALUES('Roadbike');
+INSERT INTO Package VALUES('Luxury');
+INSERT INTO Package VALUES('Classic');
+INSERT INTO Package VALUES('Mileage');
+INSERT INTO Package VALUES('Truck');
+INSERT INTO Package VALUES('Highway');
+
+
+--Insert VALUES into Item Table
+##Check this for validity
+INSERT INTO Item('Oil Change','Mileage','engine oil and oil filter');
+INSERT INTO Item('Battery Test','Mileage','spark plugs');
+INSERT INTO Item('Exterior Lights','Roadbike','exterior light bulbs');
+INSERT INTO Item('AC Repair','Luxury','radiator and condenser');
+INSERT INTO Item('Fluid Services','Truck','fluid levels');
+INSERT INTO Item('Engine Repair','Classic','fuel lines and fuel cap gasket');
+INSERT INTO Item('Belt&Hose Replacement','F-Series','engine coolant');
+INSERT INTO Item('Brake Repair','Truck','brake linings');
+INSERT INTO Item('Tire Alignment','F-Series','tires');
+INSERT INTO Item('Transmission Repair','Mileage','multi-point inspection');
+INSERT INTO Item('Tire Change','Classic','tires');
+INSERT INTO Item('Engine Light Diagnostics','Highway','maintenance reminder light');
+INSERT INTO Item('SMOG','Classic','exhaust system');
+INSERT INTO Item('Ignition Repair','Roadbike','ignition wires');
+
+
+--Insert VALUES into OrderLines
+INSERT INTO OrderLines('2014-03-25','Oil Change','E0005');
+INSERT INTO OrderLines('2014-03-25','Battery Test','E0001');
+INSERT INTO OrderLines('2014-03-25','Transmission Repair','E0002');
+INSERT INTO OrderLines('2014-03-30','Engine Repair','E0003');
+INSERT INTO OrderLines('2014-03-30','Tire Change','E0005');
+INSERT INTO OrderLines('2014-03-30','SMOG','E0004');
+INSERT INTO OrderLines('2014-05-12','Belt & Hose Replacement','E0005');
+INSERT INTO OrderLines('2014-05-12','Tire Alignment','E0005');
+INSERT INTO OrderLines('2014-07-30','Oil Change','E0005');
+INSERT INTO OrderLines('2014-07-30','Battery Test','E0001');
+INSERT INTO OrderLines('2014-07-30','Transmission Repair','E0002');
+INSERT INTO OrderLines('2014-09-10','Ignition Repair','E0002');
+INSERT INTO OrderLines('2014-09-10','Exterior Lights','E0006');
+INSERT INTO OrderLines('2015-02-06','Fluid Services','E0006');
+INSERT INTO OrderLines('2015-02-06','Brake Repair','E0001');
+INSERT INTO OrderLines('2015-04-15','Belt & Hose Replacement','E0005');
+INSERT INTO OrderLines('2015-04-15','Tire Alignment','E0005');
+INSERT INTO OrderLines('2015-04-16','Engine Repair','E0003');
+INSERT INTO OrderLines('2015-04-16','Tire Change','E0005');
+INSERT INTO OrderLines('2015-04-16','SMOG','E0004');
+INSERT INTO OrderLines('2015-04-17','Fluid Services','E0006');
+INSERT INTO OrderLines('2015-04-17','Brake Repair','E0001');
+INSERT INTO OrderLines('2015-06-28','Engine Light Diagnostics','E0004');
+INSERT INTO OrderLines('2015-06-28','Oil Change','E0001');
+INSERT INTO OrderLines('2015-06-28','Battery Test','E0001');
+INSERT INTO OrderLines('2015-06-28','Transmission Repair','E0002');
+INSERT INTO OrderLines('2015-08-24','Engine Repair','E0003');
+INSERT INTO OrderLines('2015-08-24','Tire Change','E0005');
+INSERT INTO OrderLines('2015-08-24','SMOG','E0006');
+INSERT INTO OrderLines('2015-10-10','Ignition Repair','E0003');
+INSERT INTO OrderLines('2015-10-10','Exterior Lights','E0006');
+INSERT INTO OrderLines('2015-12-22','Belt & Hose Replacement','E0005');
+INSERT INTO OrderLines('2015-12-22','Tire Alignment','E0005');
+INSERT INTO OrderLines('2016-01-14','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-01-14','Tire Change','E0005');
+INSERT INTO OrderLines('2016-01-14','SMOG','E0004');
+INSERT INTO OrderLines('2016-01-20','Oil Change','E0005');
+INSERT INTO OrderLines('2016-01-20','Battery Test','E0001');
+INSERT INTO OrderLines('2016-01-20','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-01-25','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-01-25','Tire Change','E0005');
+INSERT INTO OrderLines('2016-01-25','SMOG','E0006');
+INSERT INTO OrderLines('2016-02-05','Belt & Hose Replacement','E0005');
+INSERT INTO OrderLines('2016-02-05','Tire Alignment','E0005');
+INSERT INTO OrderLines('2016-02-07','Fluid Services','E0006');
+INSERT INTO OrderLines('2016-02-07','Brake Repair','E0003');
+INSERT INTO OrderLines('2016-02-14','Oil Change','E0001');
+INSERT INTO OrderLines('2016-02-14','Battery Test','E0001');
+INSERT INTO OrderLines('2016-02-14','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-02-17','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-02-17','Tire Change','E0005');
+INSERT INTO OrderLines('2016-02-17','SMOG','E0004');
+INSERT INTO OrderLines('2016-02-20','Fluid Services','E0006');
+INSERT INTO OrderLines('2016-02-20','Brake Repair','E0003');
+INSERT INTO OrderLines('2016-03-01','Belt & Hose Replacement','E0005');
+INSERT INTO OrderLines('2016-03-01','Tire Alignment','E0005');
+INSERT INTO OrderLines('2016-03-10','Oil Change','E0005');
+INSERT INTO OrderLines('2016-03-10','Battery Test','E0001');
+INSERT INTO OrderLines('2016-03-10','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-03-14','Oil Change','E0001');
+INSERT INTO OrderLines('2016-03-14','Battery Test','E0001');
+INSERT INTO OrderLines('2016-03-14','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-03-21','Fluid Services','E0006');
+INSERT INTO OrderLines('2016-03-21','Brake Repair','E0001');
+INSERT INTO OrderLines('2016-04-18','Engine Light Diagnostics','E0004');
+INSERT INTO OrderLines('2016-04-29','Oil Change','E0005');
+INSERT INTO OrderLines('2016-04-29','Battery Test','E0001');
+INSERT INTO OrderLines('2016-04-29','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-05-10','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-05-10','Tire Change','E0005');
+INSERT INTO OrderLines('2016-05-10','SMOG','E0006');
+INSERT INTO OrderLines('2016-05-13','AC Repair','E0004');
+INSERT INTO OrderLines('2016-05-23','Oil Change','E0005');
+INSERT INTO OrderLines('2016-05-23','Battery Test','E0001');
+INSERT INTO OrderLines('2016-05-23','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-06-02','Belt & Hose Replacement','E0005');
+INSERT INTO OrderLines('2016-06-02','Tire Alignment','E0005');
+INSERT INTO OrderLines('2016-06-02','Battery Test','E0001');
+INSERT INTO OrderLines('2016-06-12','Oil Change','E0001');
+INSERT INTO OrderLines('2016-06-12','Battery Test','E0001');
+INSERT INTO OrderLines('2016-06-12','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-06-12','Exterior Lights','E0002');
+INSERT INTO OrderLines('2016-06-22','AC Repair','E0004');
+INSERT INTO OrderLines('2016-06-22','Tire Change','E0005');
+INSERT INTO OrderLines('2016-06-22','SMOG','E0004');
+INSERT INTO OrderLines('2016-07-03','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-07-03','Tire Change','E0005');
+INSERT INTO OrderLines('2016-07-03','SMOG','E0004');
+INSERT INTO OrderLines('2016-07-08','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-07-08','Tire Change','E0005');
+INSERT INTO OrderLines('2016-07-08','SMOG','E0006');
+INSERT INTO OrderLines('2016-07-08','Exterior Lights','E0002');
+INSERT INTO OrderLines('2016-07-11','Belt & Hose Replacement','E0005');
+INSERT INTO OrderLines('2016-07-11','Tire Alignment','E0005');
+INSERT INTO OrderLines('2016-07-15','Oil Change','E0005');
+INSERT INTO OrderLines('2016-07-15','Battery Test','E0001');
+INSERT INTO OrderLines('2016-07-15','Transmission Repair','E0002');
+INSERT INTO OrderLines('2016-07-15','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-07-15','AC Repair','E0004');
+INSERT INTO OrderLines('2016-07-21','AC Repair','E0004');
+INSERT INTO OrderLines('2016-07-27','Engine Repair','E0003');
+INSERT INTO OrderLines('2016-07-27','Tire Change','E0005');
+INSERT INTO OrderLines('2016-07-27','SMOG','E0006');
+INSERT INTO OrderLines('2016-08-23','Engine Light Diagnostics','E0004');
+INSERT INTO OrderLines('2016-08-26','AC Repair','E0004');
