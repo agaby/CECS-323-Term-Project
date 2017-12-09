@@ -30,7 +30,8 @@ CREATE TABLE Customer(custID varchar(30) NOT NULL,
                       PRIMARY KEY(custID));
                       
 CREATE TABLE Corporation(corporationName varchar(50),
-                         custID varchar(30) PRIMARY KEY,
+                         custID varchar(30),
+                         PRIMARY KEY(corporationName, custID),
                          FOREIGN KEY(custID) REFERENCES Customer(custID));
                          
 CREATE TABLE Address(addressType varchar(30),
@@ -168,7 +169,7 @@ CREATE TABLE OrderLine(serviceDate varchar(30),
                        PRIMARY KEY(serviceDate, itemName),
                        FOREIGN KEY(serviceDate) REFERENCES ServiceVisit(serviceDate),
                        FOREIGN KEY(itemName) REFERENCES Item(itemName),
-                       FOREIGN KEY(empID) REFERENCES Mechanic(empID));                                     
+                       FOREIGN KEY(empID) REFERENCES Mechanic(empID));                           
 
 --View Statments for all Classes                     
 SELECT * FROM Address;
@@ -194,5 +195,95 @@ SELECT * FROM Skill;
 SELECT * FROM Steady;
 SELECT * FROM SteadyEmail;
 SELECT * FROM Vehicle;
+
+
+--AGABYS WORK
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 10055, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 11256, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 3050, 'CCC');        
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 1679, 'CCC');   
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 1339, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 9020, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 1900, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 1534, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 15490, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 14320, 'CCC');
+INSERT INTO Existing(projectMileage, custID)
+                VALUES( 1984, 'CCC');
+-- Pospective
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID)
+                VALUES( null, 'CCC', 'III');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID)
+                VALUES( null, 'CCC', 'III');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID)
+                VALUES( null, 'CCC', 'III');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID)
+                VALUES( null, 'CCC', 'III');
+INSERT INTO Prospective(deadProspect, ExistingCustID, custID)
+                VALUES( null, 'CCC', 'III');
+-- Contact
+INSERT INTO Contact( how, dateContact,custID)
+                VALUES( 'Intenet', '2/2/2015', 'CCC');
+INSERT INTO Contact( how, dateContact,custID)
+                VALUES( 'Intenet', '1/5/2014', 'CCC');
+INSERT INTO Contact( how, dateContact,custID)
+                VALUES( 'Magazine', '4/2/2016', 'CCC');
+INSERT INTO Contact( how, dateContact,custID)
+                VALUES( 'Magazine', '7/2/2017', 'CCC');
+INSERT INTO Contact( how, dateContact,custID)
+                VALUES( 'Internet', '12/7/2014', 'CCC');
+-- Premir
+INSERT INTO Premire (fee, dateJoined, custID)
+                VALUES(10, '12/14/2014', 'CCC');
+INSERT INTO Premire (fee, dateJoined, custID)
+                VALUES(10, '1/14/2012', 'CCC');
+INSERT INTO Premire (fee, dateJoined, custID)
+                VALUES(10, '3/14/2017', 'CCC');
+INSERT INTO Premire (fee, dateJoined, custID)
+                VALUES(10, '2/9/2013', 'CCC');
+INSERT INTO Premire (fee, dateJoined, custID)
+                VALUES(10, '7/22/2011', 'CCC');
+
+-- PaymentHistory
+INSERT INTO PaymentHistory( payDate, paid, custID ) 
+            VALUES( '2/12/2015', '150', 'CCC');
+INSERT INTO PaymentHistory( payDate, paid, custID ) 
+            VALUES( '1/2/2013', '150', 'CCC');
+INSERT INTO PaymentHistory( payDate, paid, custID ) 
+            VALUES( '10/22/2016', '170', 'CCC');
+INSERT INTO PaymentHistory( payDate, paid, custID ) 
+            VALUES( '1/2/2013', '150', 'CCC');
+INSERT INTO PaymentHistory( payDate, paid, custID ) 
+            VALUES( '1/2/2013', '150', 'CCC');
+
+-- Steady 
+INSERT INTO Steady(custID)
+        Value('CCC');
+        Value('CCC');
+        Value('CCC');
+        Value('CCC');
+        Value('CCC');
+
+-- Steady Email
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '10/20/2015', '1200', '1 hour', '68', 'CCC');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '11/10/201', '1200', '0.5 hour', '30', 'CCC');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '9/12/2012', '1350', '2 hour', '180', 'CCC');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '10/20/2011', '1890', '1 hour', '90', 'CCC');
+INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
+        Value( '6/17/2010', '1290', '0.75 hour', '75', 'CCC');
 
                      
