@@ -329,13 +329,15 @@ INSERT INTO Item VALUES('AC Repair','Luxury','radiator and condenser');
 INSERT INTO Item VALUES('Fluid Services','Truck','fluid levels');
 INSERT INTO Item VALUES('Engine Repair','Classic','fuel lines and fuel cap gasket');
 INSERT INTO Item VALUES('Belt&Hose Replacement','Ford F-Series','engine coolant');
-INSERT INTO Item VALUES('Brake Repair','Truck','brake linings');
+INSERT INTO Item VALUES('Brake Repair','Truck','brake linings,drums,pads,disks');
 INSERT INTO Item VALUES('Tire Alignment','Ford F-Series','tires');
 INSERT INTO Item VALUES('Transmission Repair','Mileage','multi-point inspection');
 INSERT INTO Item VALUES('Tire Change','Classic','tires');
 INSERT INTO Item VALUES('Engine Light Diagnostics','Highway','maintenance reminder light');
 INSERT INTO Item VALUES('SMOG','Classic','exhaust system');
 INSERT INTO Item VALUES('Ignition Repair','Roadbike','ignition wires');
+INSERT INTO Item VALUES('Power Steering Repair',NULL,'multi-point inspection');
+INSERT INTO Item VALUES('Suspension Check',NULL,'multi-point inspection');
 
 
 --Insert VALUES into OrderLines
