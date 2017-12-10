@@ -1,173 +1,3 @@
-﻿-- DROP STATEMENTS FOR ENTIRE DB
-DROP TABLE Address;
-DROP TABLE Corporation;
-DROP TABLE Private;
-DROP TABLE PaymentHistory;
-DROP TABLE Premier;
-DROP TABLE SteadyEmail;
-DROP TABLE Steady;
-DROP TABLE Contact;
-DROP TABLE MechanicSkill;
-DROP TABLE Prospective;
-DROP TABLE Mentorship;
-DROP TABLE OrderLine;
-DROP TABLE Item;
-DROP TABLE Mechanic;
-DROP TABLE Existing;
-DROP TABLE ServiceVisit;
-DROP TABLE Vehicle;
-DROP TABLE Package;
-DROP TABLE ServiceAdvisor;
-DROP TABLE Employee;
-DROP TABLE Skill;
-DROP TABLE Customer;
-
-CREATE TABLE Customer(custID varchar(30) NOT NULL,
-                      custName varchar(50),
-                      custPhone varchar(30),
-                      custEmail varchar(50),
-                      PRIMARY KEY(custID));
-                      
-CREATE TABLE Corporation(corporationName varchar(50),
-                         custID varchar(30),
-                         PRIMARY KEY(corporationName, custID),
-                         FOREIGN KEY(custID) REFERENCES Customer(custID));
-                         
-CREATE TABLE Address(addressType varchar(30),
-                     address varchar(30),
-                     custID varchar(30),
-                     PRIMARY KEY(addressType, address, custID),
-                     FOREIGN KEY(custID) REFERENCES Corporation(custID));
-                     
-CREATE TABLE Private(privateHomeAddress varchar(30),
-                     custID varchar(30),
-                     PRIMARY KEY(custID),
-                     FOREIGN KEY(custID) REFERENCES Customer(custID)) ;          
-
-CREATE TABLE Existing(projectMileage integer,
-                      custID varchar(30),
-                      PRIMARY KEY(custID),
-                      FOREIGN KEY(custID) REFERENCES Customer(custID));
-
-                    
-CREATE TABLE Prospective(deadProspect tinyint(1),
-                         ExistingCustID varchar(30),
-                         custID varchar(30),
-			 refferalDate varchar(30),
-                         PRIMARY KEY(custID),
-                         FOREIGN KEY(ExistingCustID) REFERENCES Existing(custID),
-                         FOREIGN KEY(custID) REFERENCES Customer(custID));                                        
-                    
-CREATE TABLE Contact(how varchar(30),
-                     dateContact varchar(30),
-                     custID varchar(30),
-                     PRIMARY KEY(custID, dateContact),
-                     FOREIGN KEY(custID) REFERENCES Prospective(custID)); 
-                     
-CREATE TABLE Premier(fee varchar(30),
-                     dateJoined varchar(30),
-                     custID varchar(30),
-                     PRIMARY KEY(custID),
-                     FOREIGN KEY(custID) REFERENCES Existing(custID));
-                     
-CREATE TABLE PaymentHistory(payDate varchar(30),
-                            paid varchar(30),
-                            custID varchar(30),
-                            PRIMARY KEY(payDate, custID),
-                            FOREIGN KEY(custID) REFERENCES Premier(custID)); 
-                    
-CREATE TABLE Steady (custID varchar(30),
-                     dateJoined varchar(30),
-                     PRIMARY KEY (custID),
-                     FOREIGN KEY(custID) REFERENCES Existing(custID)); 
-                     
-CREATE TABLE SteadyEmail(estServiceDueDate varchar(30),
-                         estMileage varchar(30),
-                         expectedTime varchar(30),
-                         estCost varchar(30),
-                         custID varchar(30),
-                         PRIMARY KEY(custID, estServiceDueDate),
-                         FOREIGN KEY(custID) REFERENCES Steady(custID));
-                         
-CREATE TABLE Employee(empID varchar(30),
-                      empName varchar(50),
-                      empPhone varchar(30),
-                      empEmail varchar(50),
-                      empSalary varchar(50),
-                      PRIMARY KEY (empID));  
-                      
-CREATE TABLE ServiceAdvisor(empID varchar(30),
-                            PRIMARY KEY (empID),
-                            FOREIGN KEY(empID) REFERENCES Employee(empID));
-                            
-CREATE TABLE Mechanic(schoolAttended varchar(50),
-                      certificationDate varchar(50),
-                      mustMentor tinyint(1),
-                      hasMentored tinyint(1),
-                      empID varchar(30),
-                      PRIMARY KEY (empID),
-                      FOREIGN KEY(empID) REFERENCES Employee(empID));
-                      
-CREATE TABLE Mentorship(dateStart varchar(30),
-                        dateEnd varchar(30),
-                        menteeEmpID varchar(30),
-                        mentorEmpID varchar(30),
-                        PRIMARY KEY(dateStart, menteeEmpID, mentorEmpID),
-                        FOREIGN KEY(menteeEmpID) REFERENCES Mechanic(empID),
-                        FOREIGN KEY(mentorEmpID) REFERENCES Mechanic(empID));
-                                           
-CREATE TABLE Skill(skillName varchar(30),
-                   PRIMARY KEY(skillName));
-                   
-CREATE TABLE MechanicSkill(skillName varchar(30),
-                            skillLevel varchar(30),
-                            empID varchar(30),
-                            PRIMARY KEY(skillName, empID),
-                            FOREIGN KEY(skillName) REFERENCES Skill(skillName),
-                            FOREIGN KEY(empID) REFERENCES Mechanic(empID));
-
-CREATE TABLE Package(packageName varchar(30),
-                     PRIMARY KEY(packageName)); 
-
-CREATE TABLE Vehicle(VIN varchar(50),
-                     make varchar(30),
-                     model varchar(30),
-                     color varchar(30),
-                     mileage varchar(30),
-                     maintenanceInterval varchar(30),
-                     custID varchar(30),
-                     packageName varchar (30),
-                     PRIMARY KEY(VIN),
-                     FOREIGN KEY(custID) REFERENCES Customer(custID),
-                     FOREIGN KEY(packageName) REFERENCES Package(packageName));                    
-        
-CREATE TABLE Item(itemName varchar(30),
-                  packageName varchar(30),
-                  skillName varchar(30),
-                  PRIMARY KEY(itemName),
-                  FOREIGN KEY(packageName) REFERENCES Package(packageName),
-                  FOREIGN KEY(skillName) REFERENCES Skill(skillName));  
-                  
-CREATE TABLE ServiceVisit(packageName varchar(30),
-                          serviceDate varchar(30),
-                          VIN varchar(30),
-                          mileageVisit varchar(30),
-                          laborHours varchar(30),
-                          cost varchar(30),
-                          empID varchar(30),
-                          PRIMARY KEY(serviceDate, VIN),
-                          FOREIGN KEY(packageName) REFERENCES Package(packageName),
-                          FOREIGN KEY(VIN) REFERENCES Vehicle(VIN),
-                          FOREIGN KEY(empID) REFERENCES ServiceAdvisor(empID));
-                  
-CREATE TABLE OrderLine(serviceDate varchar(30),
-                       itemName varchar(30),
-                       empID varchar(30),
-                       PRIMARY KEY(serviceDate, itemName),
-                       FOREIGN KEY(serviceDate) REFERENCES ServiceVisit(serviceDate),
-                       FOREIGN KEY(itemName) REFERENCES Item(itemName),
-                       FOREIGN KEY(empID) REFERENCES Mechanic(empID));    
-
 SELECT * FROM Address;
 SELECT * FROM Contact; 
 SELECT * FROM Corporation;
@@ -335,6 +165,7 @@ INSERT INTO Employee VALUES('E0106','John Schad',      '(169) 547-2261','schad12
 INSERT INTO Employee VALUES('E0108','Jonathan Miller', '(714) 677-0281','jonmiller789@gmail.com','$83,914');
 
 --Insert VALUES into Mechanic Table
+--OK
 INSERT INTO Mechanic VALUES('CSU Long Beach',                   '2014-02-26',0,0,'E0001');
 INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '2015-06-14',1,0,'E0002');
 INSERT INTO Mechanic VALUES('Auburn University',                '2016-12-11',0,0,'E0003');
@@ -360,6 +191,7 @@ INSERT INTO Mentorship VALUES('2015-08-16','2015-09-20','E0005','E0011');
 
 
 --Insert VALUES into Skill Table
+--OK
 INSERT INTO Skill VALUES('fluid levels');
 INSERT INTO Skill VALUES('brake linings,drums,pads,disks');
 INSERT INTO Skill VALUES('engine oil and oil filter');
@@ -375,6 +207,7 @@ INSERT INTO Skill VALUES('multi-point inspection');
 INSERT INTO Skill VALUES('tires');
 
 --Insert VALUES into MechanicSkill Table
+--OK
 INSERT INTO MechanicSkill VALUES('spark plugs','10','E0001');
 INSERT INTO MechanicSkill VALUES('engine oil and oil filter','3','E0001');
 INSERT INTO MechanicSkill VALUES('brake linings,drums,pads,disks','7','E0001');
@@ -395,6 +228,7 @@ INSERT INTO MechanicSkill VALUES('exhaust system','5','E0006');
 INSERT INTO MechanicSkill VALUES('exterior light bulbs','8','E0006');
 
 --Insert VALUES into Package Table
+--OK
 INSERT INTO Package VALUES('Ford F-Series');
 INSERT INTO Package VALUES('Roadbike');
 INSERT INTO Package VALUES('Luxury');
@@ -404,6 +238,7 @@ INSERT INTO Package VALUES('Truck');
 INSERT INTO Package VALUES('Highway');
 
 --Insert VALUES into Vehicles Table
+--OK
 INSERT INTO Vehicle VALUES('WAULH64BX1N160442','Audi','A6 Avant','Silver','52000','1000','C0002','Luxury');
 INSERT INTO Vehicle VALUES('WBAAB5402E1044876','BMW','3-Series','White','75000','1000','C0003','Luxury');
 INSERT INTO Vehicle VALUES('1FMCU9EG7AKC77905','Ford','Escape','Black','105234','2500','C0004','Mileage');
@@ -424,6 +259,7 @@ INSERT INTO Vehicle VALUES('1HTSLABL91H371211','International','4700','Gray','35
 INSERT INTO Vehicle VALUES('1FUY3MCB8WL875938','Freightliner','FLD112','White','662220','10000','C0004','Highway');
 
 --Insert values into service advisor
+--OK
 INSERT INTO ServiceAdvisor values('E0001');
 INSERT INTO ServiceAdvisor values('E0002');
 INSERT INTO ServiceAdvisor values('E0003');
@@ -439,6 +275,7 @@ INSERT INTO ServiceAdvisor values('E0106');
 INSERT INTO ServiceAdvisor values('E0108');
 
 --Insert VALUES into ServiceVisit Table
+--OK
 INSERT INTO ServiceVisit VALUES('Ford F-Series', '2015-04-15', '1FDNF21L0YEB63640', '75500', '4', '360', 'E0001');
 INSERT INTO ServiceVisit VALUES('Ford F-Series', '2016-02-05', '1FDNF21L0YEB63640','87923','6', '540', 'E0002');
 INSERT INTO ServiceVisit VALUES('Ford F-Series', '2016-06-02', '1FDNF21L0YEB63640','92432','14','1260','E0003');
@@ -483,7 +320,7 @@ INSERT INTO ServiceVisit VALUES('Truck', '2016-02-20', '5TFMW5F10AX154486','1415
 INSERT INTO ServiceVisit VALUES('Truck', '2016-03-21', '5TFMW5F10AX154486','142767','2','120', 'E0106');
 
 --Insert VALUES into Item Table
---Check this for validity
+--OK
 INSERT INTO Item VALUES('Oil Change','Mileage','engine oil and oil filter');
 INSERT INTO Item VALUES('Battery Test','Mileage','spark plugs');
 INSERT INTO Item VALUES('Exterior Lights','Roadbike','exterior light bulbs');
@@ -491,7 +328,7 @@ INSERT INTO Item VALUES('AC Repair','Luxury','radiator and condenser');
 INSERT INTO Item VALUES('Fluid Services','Truck','fluid levels');
 INSERT INTO Item VALUES('Engine Repair','Classic','fuel lines and fuel cap gasket');
 INSERT INTO Item VALUES('Belt&Hose Replacement','Ford F-Series','engine coolant');
-INSERT INTO Item VALUES('Brake Repair','Truck','brake linings');
+INSERT INTO Item VALUES('Brake Repair','Truck','brake linings,drums,pads,disks');
 INSERT INTO Item VALUES('Tire Alignment','Ford F-Series','tires');
 INSERT INTO Item VALUES('Transmission Repair','Mileage','multi-point inspection');
 INSERT INTO Item VALUES('Tire Change','Classic','tires');
@@ -501,6 +338,7 @@ INSERT INTO Item VALUES('Ignition Repair','Roadbike','ignition wires');
 
 
 --Insert VALUES into OrderLines
+--OK
 INSERT INTO OrderLine VALUES('2014-03-25','Oil Change','E0005');
 INSERT INTO OrderLine VALUES('2014-03-25','Battery Test','E0001');
 INSERT INTO OrderLine VALUES('2014-03-25','Transmission Repair','E0002');
