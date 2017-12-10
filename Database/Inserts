@@ -261,51 +261,57 @@ INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C00
 
 -- Contact
 --OK
-INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2/2/2015',  'C0006');
-INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '3/2/2015',  'C0006');
-INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '1/5/2014',  'C0007');
-INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '4/2/2016',  'C0008');
-INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '7/2/2017',  'C0009');
-INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '12/7/2014', 'C000A');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2015-02-02',  'C0006');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2015-03-02',  'C0006');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2014-01-05',  'C0007');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2016-04-02',  'C0008');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2017-07-02',  'C0009');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2014-12-07', 'C000A');
+
+
 
 -- Premier
 --OK
-INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '12/14/2014', 'C0000');
-INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '1/14/2012',  'C0001');
-INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '3/14/2017',  'C0004');
-INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2/9/2013',   'C0005');
-INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '7/22/2011',  'C000D');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2014-12-14', 'C0000');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2012-01-14',  'C0001');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2017-03-14',  'C0004');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2013-02-09',   'C0005');
+INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2011-07-22',  'C000D');
+
 
 -- PaymentHistory
 --OK
-INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2/12/2015',  '150', 'C0000');
-INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2/12/2016',  '150', 'C0000');
-INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2/12/2017',  '150', 'C0000');
-INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '1/2/2013',   '150', 'C0001');
-INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '10/22/2016', '170', 'C0004');
-INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '1/2/2013',   '150', 'C0005');
-INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '1/2/2013',   '150', 'C000D');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2015-02-12',  '150', 'C0000');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2016-02-12',  '150', 'C0000');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2017-02-12',  '150', 'C0000');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2013-01-02',   '150', 'C0001');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2016-10-22', '170', 'C0004');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2013-01-02',   '150', 'C0005');
+INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2013-01-02',   '150', 'C000D');
+
 
 -- Steady 
 --OK
-INSERT INTO Steady VALUES('C0002', '1/2/2013');
-INSERT INTO Steady VALUE ('C0003', '7/23/2010');
-INSERT INTO Steady VALUE ('C000B', '6/12/2011');
-INSERT INTO Steady VALUE ('C000C', '3/22/2016');
-INSERT INTO Steady VALUE ('C000E', '2/17/2000');
+INSERT INTO Steady VALUES('C0002', '2013-01-02');
+INSERT INTO Steady VALUE ('C0003', '2010-07-23');
+INSERT INTO Steady VALUE ('C000B', '2011-06-12');
+INSERT INTO Steady VALUE ('C000C', '2016-03-22');
+INSERT INTO Steady VALUE ('C000E', '2000-02-17');
+
 
 -- Steady Email
 --OK
 INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
-        Value( '10/20/2015', '1200', '1 hour', '68', 'C0002');
+        Value( '2015-10-20', '1200', '1 hour', '68', 'C0002');
 INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
-        Value( '11/10/201', '1200', '0.5 hour', '30', 'C0003');
+        Value( '2012-11-10', '1200', '0.5 hour', '30', 'C0003');
 INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
-        Value( '9/12/2012', '1350', '2 hour', '180', 'C000B');
+        Value( '2012-09-12', '1350', '2 hour', '180', 'C000B');
 INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
-        Value( '10/20/2011', '1890', '1 hour', '90', 'C000C');
+        Value( '2011-10-20', '1890', '1 hour', '90', 'C000C');
 INSERT INTO SteadyEmail( estServiceDueDate, estMileage, expectedTime, estCost, custID )
-        Value( '6/17/2010', '1290', '0.75 hour', '75', 'C000E');
+        Value( '2010-06-17', '1290', '0.75 hour', '75', 'C000E');
+
 
 --Minhkhoa------------------------------------------------------------------------------------------
 --Insert VALUES into Employee Table
@@ -329,27 +335,29 @@ INSERT INTO Employee VALUES('E0106','John Schad',      '(169) 547-2261','schad12
 INSERT INTO Employee VALUES('E0108','Jonathan Miller', '(714) 677-0281','jonmiller789@gmail.com','$83,914');
 
 --Insert VALUES into Mechanic Table
-INSERT INTO Mechanic VALUES('CSU Long Beach',                   '2/26/2014',0,0,'E0001');
-INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '6/14/2015',1,0,'E0002');
-INSERT INTO Mechanic VALUES('Auburn University',                '12/11/2016',0,0,'E0003');
-INSERT INTO Mechanic VALUES('Golden West College',              '5/15/2017',1,1,'E0004');
-INSERT INTO Mechanic VALUES('UC Davis',                         '10/14/2014',0,0,'E0005');
-INSERT INTO Mechanic VALUES('University of Pennsylvania',       '11/19/2016',1,1,'E0006');
-INSERT INTO Mechanic VALUES('CSU Long Beach',                   '3/4/2015',0,0,'E0007');
-INSERT INTO Mechanic VALUES('Florida State University',         '2/2/2017',1,0,'E0008');
-INSERT INTO Mechanic VALUES('Kent State University',            '7/20/2014',0,0,'E0009');
-INSERT INTO Mechanic VALUES('Ohio State University',            '4/25/2017',1,1,'E0010');
-INSERT INTO Mechanic VALUES('University of Southern California','12/1/2016',0,0,'E0011');
-INSERT INTO Mechanic VALUES('UC Los Angeles',                   '6/11/2015',1,0,'E0012');
-INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '6/15/2017',0,0,'E0013');
+INSERT INTO Mechanic VALUES('CSU Long Beach',                   '2014-02-26',0,0,'E0001');
+INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '2015-06-14',1,0,'E0002');
+INSERT INTO Mechanic VALUES('Auburn University',                '2016-12-11',0,0,'E0003');
+INSERT INTO Mechanic VALUES('Golden West College',              '2017-05-15',1,1,'E0004');
+INSERT INTO Mechanic VALUES('UC Davis',                         '2014-10-14',0,0,'E0005');
+INSERT INTO Mechanic VALUES('University of Pennsylvania',       '2016-11-19',1,1,'E0006');
+INSERT INTO Mechanic VALUES('CSU Long Beach',                   '2015-03-04',0,0,'E0007');
+INSERT INTO Mechanic VALUES('Florida State University',         '2017-02-02',1,0,'E0008');
+INSERT INTO Mechanic VALUES('Kent State University',            '2014-07-20',0,0,'E0009');
+INSERT INTO Mechanic VALUES('Ohio State University',            '2017-04-25',1,1,'E0010');
+INSERT INTO Mechanic VALUES('University of Southern California','2016-12-01',0,0,'E0011');
+INSERT INTO Mechanic VALUES('UC Los Angeles',                   '2015-06-11',1,0,'E0012');
+INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '2017-06-15',0,0,'E0013');
+
 
 --Insert VALUES into Mentorship Table
 --these work
-INSERT INTO Mentorship VALUES('10/15/2015','10/30/2015','E0001','E0006');
-INSERT INTO Mentorship VALUES('5/5/2015','6/1/2015','E0002','E0007');
-INSERT INTO Mentorship VALUES('3/6/2016','3/27/2016','E0003','E0008');
-INSERT INTO Mentorship VALUES('2/24/2016','3/31/2016','E0004','E0010');
-INSERT INTO Mentorship VALUES('8/16/2015','9/20/2015','E0005','E0011');
+INSERT INTO Mentorship VALUES('2015-10-15','2015-10-30','E0001','E0006');
+INSERT INTO Mentorship VALUES('2015-05-05','2015-06-01','E0002','E0007');
+INSERT INTO Mentorship VALUES('2016-03-06','2016-03-27','E0003','E0008');
+INSERT INTO Mentorship VALUES('2016-02-24','2016-03-31','E0004','E0010');
+INSERT INTO Mentorship VALUES('2015-08-16','2015-09-20','E0005','E0011');
+
 
 --Insert VALUES into Skill Table
 INSERT INTO Skill VALUES('fluid levels');
