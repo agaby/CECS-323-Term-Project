@@ -1,42 +1,77 @@
---1
+--1 NEEDS WORK
+SELECT 'Premier', custName, custPhone, custEmail FROM Premier
+NATURAL JOIN Customer
+UNION
+SELECT 'Steady',custName, custPhone, custEmail FROM Steady
+NATURAL JOIN Customer
+UNION
+SELECT 'Prospective',custName, custPhone, custEmail FROM Prospective
+NATURAL JOIN Customer;
+----------------------------------------------------------------------------------
 
 --2
 SELECT serviceDate, custName, cost 
 FROM ServiceVisit 
 NATURAL JOIN Vehicle 
 NATURAL JOIN Customer;
+----------------------------------------------------------------------------------
 
 --3
+
+----------------------------------------------------------------------------------
 
 --4
 SELECT empName, COUNT(skillName) AS NumberOfSkills 
 FROM MechanicSkill  me 
 INNER JOIN Employee e 
 ON me.empID = e.empID
-GROUP BY empID HAVING COUNT(skillName) >= 3;
+GROUP BY e.empID HAVING COUNT(skillName) >= 3;
+----------------------------------------------------------------------------------
 
 --5
+--a
+
+--b
+
+----------------------------------------------------------------------------------
 
 --6
 SELECT packageName, packageCost, itemName 
 FROM Package 
 NATURAL JOIN Item;
+----------------------------------------------------------------------------------
 
 --7
 
+----------------------------------------------------------------------------------
+
 --8
+
+----------------------------------------------------------------------------------
 
 --9
 
+----------------------------------------------------------------------------------
+
 --10
+
+----------------------------------------------------------------------------------
 
 --11
 
+----------------------------------------------------------------------------------
+
 --12
+
+----------------------------------------------------------------------------------
 
 --13
 
+----------------------------------------------------------------------------------
+
 --14
+
+----------------------------------------------------------------------------------
 
 --15
 SELECT empName AS 'Mechanic and Advisor' 
@@ -44,13 +79,17 @@ FROM Employee
 NATURAL JOIN Mechanic 
 NATURAL JOIN ServiceAdvisor 
 WHERE Mechanic.empID=ServiceAdvisor.empID;
+----------------------------------------------------------------------------------
 
 --16
+
+----------------------------------------------------------------------------------
 
 --17
 SELECT itemName 
 FROM Item
 WHERE packageName IS NULL;
+----------------------------------------------------------------------------------
 
 --18
 --a.
@@ -59,5 +98,4 @@ WHERE packageName IS NULL;
 
 --c.
 
---STUFF TO ADD
 
