@@ -1,14 +1,26 @@
 --1
 
 --2
+SELECT serviceDate, custName, cost 
+FROM ServiceVisit 
+NATURAL JOIN Vehicle 
+NATURAL JOIN Customer;
 
 --3
 
 --4
+SELECT empName, COUNT(skillName) AS NumberOfSkills 
+FROM MechanicSkill  me 
+INNER JOIN Employee e 
+ON me.empID = e.empID
+GROUP BY empID HAVING COUNT(skillName) >= 3;
 
 --5
 
 --6
+SELECT packageName, packageCost, itemName 
+FROM Package 
+NATURAL JOIN Item;
 
 --7
 
@@ -27,10 +39,18 @@
 --14
 
 --15
+SELECT empName AS 'Mechanic and Advisor' 
+FROM Employee 
+NATURAL JOIN Mechanic 
+NATURAL JOIN ServiceAdvisor 
+WHERE Mechanic.empID=ServiceAdvisor.empID;
 
 --16
 
 --17
+SELECT itemName 
+FROM Item
+WHERE packageName IS NULL;
 
 --18
 --a.
@@ -38,3 +58,6 @@
 --b.
 
 --c.
+
+--STUFF TO ADD
+
