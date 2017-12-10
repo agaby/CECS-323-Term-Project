@@ -1,0 +1,37 @@
+--Views #1
+CREATE VIEW Customer_v AS (
+SELECT 'Premier',custID,year(now()) - year(dateJoined) as YearsSpent from Premier UNION
+SELECT 'Steady',custID,year(now()) - year(dateJoined) as YearsSpent from Steady UNION
+SELECT 'Prospective',custID,year(now()) - year(dateJoined) as YearsSpent from Prospective);
+
+CREATE VIEW Customer_addresses_v AS 
+SELECT custID,custName from Customer
+INTERSECT
+(SELECT 'Private',custID,privateHomeAddress from Private);
+ UNION
+(SELECT 'Corporation',corporationName,addressType,address from Corporation natural join Address);
+
+DROP VIEW Customer_addresses_v;
+CREATE VIEW Customer_addresses_v AS 
+(SELECT 'Private',p.*,a2.* from Private p inner join Address a2 on p.custID = a2.custID) join 
+(SELECT 'Corporation',c.*,a.* FROM Corporation c inner join Address a on c.custID = a.custID);
+SELECT * FROM Customer_addresses_v;
+
+CREATE VIEW Customer_addresses_v AS 
+SELECT 'Corporation',corporationName,addressType,address from Corporation natural join Address;
+
+CREATE VIEW Customer_addresses_v AS 
+SELECT 'Private',custID,privateHomeAddress from Private;
+
+CREATE VIEW Customer_v AS
+SELECT 'Premier',custID,year(now()) - year(dateJoined) as YearsSpent from Premier;
+select * from Customer_v;
+DROP VIEW Customer_v;
+CREATE VIEW Customer_v AS
+SELECT 'Steady',custID,year(now()) - year(dateJoined) as YearsSpent from Steady;
+
+
+
+--Views #2
+CREATE VIEW Customer_addresses_v AS SELECT 'Corporation',addressType,address 
+from Corporation natural join Address UNION SELECT 'Private',custID,privateHomeAddress from Private;
