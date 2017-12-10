@@ -97,6 +97,8 @@ INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2016-04-02',  'C
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2017-07-02',  'C0009');
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2014-12-07', 'C000A');
 
+
+
 -- Premier
 --OK
 INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2014-12-14', 'C0000');
@@ -104,6 +106,7 @@ INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2012-01-14',  'C0001')
 INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2017-03-14',  'C0004');
 INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2013-02-09',   'C0005');
 INSERT INTO Premier (fee, dateJoined, custID) VALUES(10, '2011-07-22',  'C000D');
+
 
 -- PaymentHistory
 --OK
@@ -115,6 +118,7 @@ INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2016-10-22', '170',
 INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2013-01-02',   '150', 'C0005');
 INSERT INTO PaymentHistory( payDate, paid, custID ) VALUES( '2013-01-02',   '150', 'C000D');
 
+
 -- Steady 
 --OK
 INSERT INTO Steady VALUES('C0002', '2013-01-02');
@@ -122,6 +126,7 @@ INSERT INTO Steady VALUE ('C0003', '2010-07-23');
 INSERT INTO Steady VALUE ('C000B', '2011-06-12');
 INSERT INTO Steady VALUE ('C000C', '2016-03-22');
 INSERT INTO Steady VALUE ('C000E', '2000-02-17');
+
 
 -- Steady Email
 --OK
@@ -174,16 +179,17 @@ INSERT INTO Mechanic VALUES('University of Southern California','2016-12-01',0,0
 INSERT INTO Mechanic VALUES('UC Los Angeles',                   '2015-06-11',1,0,'E0012');
 INSERT INTO Mechanic VALUES('Cal Poly SLO',                     '2017-06-15',0,0,'E0013');
 
+
 --Insert VALUES into Mentorship Table
 --these work
-INSERT INTO Mentorship VALUES('2015-10-15','2015-10-30','E0001','E0006');
-INSERT INTO Mentorship VALUES('2015-05-05','2015-06-01','E0002','E0007');
-INSERT INTO Mentorship VALUES('2016-03-06','2016-03-27','E0003','E0008');
-INSERT INTO Mentorship VALUES('2016-02-24','2016-03-31','E0004','E0010');
-INSERT INTO Mentorship VALUES('2015-08-16','2015-09-20','E0005','E0011');
-INSERT INTO Mentorship VALUES('2016-05-24','2016-06-30','E0004','E0002');
-INSERT INTO Mentorship VALUES('2015-02-16','2015-03-20','E0005','E0007');
-INSERT INTO Mentorship VALUES('2014-11-16','2014-12-20','E0005','E0002');
+INSERT INTO Mentorship VALUES('2015-10-15','2015-10-30','E0001','E0006', 'spark plugs');
+INSERT INTO Mentorship VALUES('2015-05-05','2015-06-01','E0002','E0007', 'multi-point inspection');
+INSERT INTO Mentorship VALUES('2016-03-06','2016-03-27','E0003','E0008', 'fuel lines and fuel cap gasket');
+INSERT INTO Mentorship VALUES('2016-02-24','2016-03-31','E0004','E0010', 'radiator and condenser');
+INSERT INTO Mentorship VALUES('2015-08-16','2015-09-20','E0005','E0011', 'engine coolant');
+INSERT INTO Mentorship VALUES('2016-05-24','2016-06-30','E0004','E0002', 'radiator and condensor');
+INSERT INTO Mentorship VALUES('2015-02-16','2015-03-20','E0005','E0007', 'engine coolant');
+INSERT INTO Mentorship VALUES('2014-11-16','2014-12-20','E0005','E0002', 'engine oil and oil filter');
 
 --Insert VALUES into Skill Table
 --OK
@@ -330,6 +336,8 @@ INSERT INTO Item VALUES('Tire Change','Classic','tires');
 INSERT INTO Item VALUES('Engine Light Diagnostics','Highway','maintenance reminder light');
 INSERT INTO Item VALUES('SMOG','Classic','exhaust system');
 INSERT INTO Item VALUES('Ignition Repair','Roadbike','ignition wires');
+INSERT INTO Item VALUES('Power Steering Repair',NULL,'multi-point inspection');
+INSERT INTO Item VALUES('Suspension Check',NULL,'multi-point inspection');
 
 
 --Insert VALUES into OrderLines
