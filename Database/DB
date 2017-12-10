@@ -112,6 +112,7 @@ CREATE TABLE Mentorship(dateStart varchar(30),
                         dateEnd varchar(30),
                         menteeEmpID varchar(30),
                         mentorEmpID varchar(30),
+                        skillLearned varchar(50),
                         PRIMARY KEY(dateStart, menteeEmpID, mentorEmpID),
                         FOREIGN KEY(menteeEmpID) REFERENCES Mechanic(empID),
                         FOREIGN KEY(mentorEmpID) REFERENCES Mechanic(empID));
@@ -167,4 +168,4 @@ CREATE TABLE OrderLine(serviceDate varchar(30),
                        PRIMARY KEY(serviceDate, itemName),
                        FOREIGN KEY(serviceDate) REFERENCES ServiceVisit(serviceDate),
                        FOREIGN KEY(itemName) REFERENCES Item(itemName),
-                       FOREIGN KEY(empID) REFERENCES Mechanic(empID));   
+                       FOREIGN KEY(empID) REFERENCES Mechanic(empID));    
