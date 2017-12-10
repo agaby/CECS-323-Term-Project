@@ -127,6 +127,7 @@ CREATE TABLE MechanicSkill(skillName varchar(30),
                             FOREIGN KEY(empID) REFERENCES Mechanic(empID));
 
 CREATE TABLE Package(packageName varchar(30),
+                     packageCost integer,
                      PRIMARY KEY(packageName)); 
 
 CREATE TABLE Vehicle(VIN varchar(50),
@@ -166,27 +167,4 @@ CREATE TABLE OrderLine(serviceDate varchar(30),
                        PRIMARY KEY(serviceDate, itemName),
                        FOREIGN KEY(serviceDate) REFERENCES ServiceVisit(serviceDate),
                        FOREIGN KEY(itemName) REFERENCES Item(itemName),
-                       FOREIGN KEY(empID) REFERENCES Mechanic(empID));    
-
-SELECT * FROM Address;
-SELECT * FROM Contact; 
-SELECT * FROM Corporation;
-SELECT * FROM Customer;
-SELECT * FROM Employee;
-SELECT * FROM Existing;
-SELECT * FROM Item;
-SELECT * FROM Mechanic;
-SELECT * FROM MechanicSkill;
-SELECT * FROM Mentorship;
-SELECT * FROM OrderLine;
-SELECT * FROM Package;
-SELECT * FROM PaymentHistory;
-SELECT * FROM Premier;
-SELECT * FROM Private;
-SELECT * FROM Prospective;
-SELECT * FROM ServiceAdvisor;
-SELECT * FROM ServiceVisit;
-SELECT * FROM Skill;
-SELECT * FROM Steady;
-SELECT * FROM SteadyEmail;
-SELECT * FROM Vehicle;
+                       FOREIGN KEY(empID) REFERENCES Mechanic(empID));   
