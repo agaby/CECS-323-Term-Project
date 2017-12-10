@@ -14,7 +14,6 @@ SELECT * FROM PaymentHistory;
 SELECT * FROM Premier;
 SELECT * FROM Private;
 SELECT * FROM Prospective;
-SELECT * FROM Refers;
 SELECT * FROM ServiceAdvisor;
 SELECT * FROM ServiceVisit;
 SELECT * FROM Skill;
@@ -229,13 +228,13 @@ INSERT INTO MechanicSkill VALUES('exterior light bulbs','8','E0006');
 
 --Insert VALUES into Package Table
 --OK
-INSERT INTO Package VALUES('Ford F-Series');
-INSERT INTO Package VALUES('Roadbike');
-INSERT INTO Package VALUES('Luxury');
-INSERT INTO Package VALUES('Classic');
-INSERT INTO Package VALUES('Mileage');
-INSERT INTO Package VALUES('Truck');
-INSERT INTO Package VALUES('Highway');
+INSERT INTO Package VALUES('Ford F-Series', 90);
+INSERT INTO Package VALUES('Roadbike', 150);
+INSERT INTO Package VALUES('Luxury', 160);
+INSERT INTO Package VALUES('Classic', 110);
+INSERT INTO Package VALUES('Mileage', 120);
+INSERT INTO Package VALUES('Truck', 95);
+INSERT INTO Package VALUES('Highway', 350);
 
 --Insert VALUES into Vehicles Table
 --OK
