@@ -42,7 +42,11 @@ NATURAL JOIN Item;
 ----------------------------------------------------------------------------------
 
 --7
-
+SELECT empName, (SELECT (SELECT COUNT(skillName) from MechanicSkill
+GROUP BY empID ORDER BY COUNT(skillName) DESC LIMIT 1) - COUNT(MechanicSkill.empID))
+AS "Skills Missing" FROM Employee
+INNER JOIN MechanicSkill ON Employee.empID = MechanicSkill.empID
+GROUP BY MechanicSkill.empID HAVING COUNT(MechanicSkill.empID) < 4;
 ----------------------------------------------------------------------------------
 
 --8 DOESN'T NEET TO BE DONE :D
