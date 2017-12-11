@@ -23,8 +23,12 @@ DROP VIEW Premier_profits_v;
 CREATE VIEW Premier_profits_v AS SELECT
 SELECT * FROM Premier_profits_v;
 
---Prospective_resurrection_v – List all of the prospective customers who have had three or more contacts, and for 
---whom the most recent contact was more than a year ago.  They might be ripe for another attempt.
 DROP VIEW Prospective_resurrection_v;
-CREATE VIEW Prospective_resurrection_v AS SELECT
+CREATE VIEW Prospective_resurrection_v AS 
+SELECT custname, year(now()) - year(refferalDate) as TimeSinceRefferal, COUNT(dateContact) AS NumOfContacts
+FROM Prospective 
+NATURAL JOIN Customer 
+NATURAL JOIN Contact
+WHERE refferalDate < '2014-12-12' 
+GROUP BY custID;
 SELECT * FROM Prospective_resurrection_v;
