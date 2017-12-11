@@ -82,11 +82,11 @@ INSERT INTO Existing(projectMileage, custID) VALUES( 14320, 'C000E'); --S
 -- Prospective
 --deadProspect, existingCustID, custID
 --OK
-INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0000', 'C0006');
-INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0001', 'C0007');
-INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0002', 'C0008');
-INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0003', 'C0009');
-INSERT INTO Prospective(deadProspect, ExistingCustID, custID) VALUES( null, 'C0004', 'C000A');
+INSERT INTO Prospective VALUES( null, 'C0000', 'C0006', '2014-01-05');
+INSERT INTO Prospective VALUES( null, 'C0001', 'C0007', '2017-01-08');
+INSERT INTO Prospective VALUES( null, 'C0002', 'C0008', '2012-08-08');
+INSERT INTO Prospective VALUES( null, 'C0003', 'C0009', '2014-06-01');
+INSERT INTO Prospective VALUES( null, 'C0004', 'C000A', '2010-10-10');
 
 -- Contact
 --OK
@@ -446,4 +446,4 @@ INSERT INTO OrderLine VALUES('2017-07-27','Engine Repair','E0003');
 INSERT INTO OrderLine VALUES('2017-07-27','Tire Change','E0005');
 INSERT INTO OrderLine VALUES('2017-07-27','SMOG','E0006');
 INSERT INTO OrderLine VALUES('2017-08-23','Engine Light Diagnostics','E0004');
-INSERT INTO OrderLine VALUES('2017-08-26','AC Repair','E0004');
+INSERT INTO OrderLine VALUES('2017-08-26','AC Repair','E0004'); 
