@@ -1,0 +1,15 @@
+--Views #1
+CREATE VIEW Customer_v AS 
+(SELECT 'Premier',custID,year(now()) - year(dateJoined) as YearsSpent from Premier) UNION
+(SELECT 'Steady',custID,year(now()) - year(dateJoined) as YearsSpent1 from Steady) UNION
+(SELECT 'Prospect',custID,existingCustID from Prospective);
+
+--Views #2
+CREATE VIEW Customer_addresses_v AS SELECT 'Corporation/Private',addressType,address 
+from Corporation natural join Address UNION SELECT 'Private',custID,privateHomeAddress from Private;
+
+--Views #3
+CREATE VIEW Mechanic_Mentor_v AS
+SELECT 'Mentor' AS "Mentor",e.empName,'Mentee' AS "Mentee", menteeEmpID FROM Mentorship m INNER
+JOIN Employee e on m.mentorEmpID = e.empID group by e.empName ASC;
+
