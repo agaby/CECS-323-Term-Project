@@ -92,10 +92,20 @@ INSERT INTO Prospective VALUES( null, 'C0004', 'C000A', '2010-10-10');
 --OK
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2015-02-02',  'C0006');
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2015-03-02',  'C0006');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2015-04-02',  'C0006');
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2014-01-05',  'C0007');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2013-01-05',  'C0007');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2015-01-05',  'C0007');
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2016-04-02',  'C0008');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2012-04-02',  'C0008');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2011-04-02',  'C0008');
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2017-07-02',  'C0009');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2016-07-02',  'C0009');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Phone', '2015-07-02',  'C0009');
 INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2014-12-07', 'C000A');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2015-12-07', 'C000A');
+INSERT INTO Contact( how, dateContact,custID) VALUES( 'Email', '2016-12-07', 'C000A');
+
 
 
 
