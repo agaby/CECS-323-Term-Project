@@ -222,21 +222,30 @@ INSERT INTO Skill VALUES('tires');
 INSERT INTO MechanicSkill VALUES('spark plugs','10','E0001');
 INSERT INTO MechanicSkill VALUES('engine oil and oil filter','3','E0001');
 INSERT INTO MechanicSkill VALUES('brake linings,drums,pads,disks','7','E0001');
+INSERT INTO MechanicSkill VALUES('tires','4','E0001');
 INSERT INTO MechanicSkill VALUES('multi-point inspection','7','E0002');
 INSERT INTO MechanicSkill VALUES('exterior light bulbs','2','E0002');
 INSERT INTO MechanicSkill VALUES('ignition wires','10','E0002');
+INSERT INTO MechanicSkill VALUES('fuel lines and fuel cap gasket','2','E0002');
 INSERT INTO MechanicSkill VALUES('ignition wires','5','E0003');
 INSERT INTO MechanicSkill VALUES('brake linings,drums,pads,disks','1','E0003');
 INSERT INTO MechanicSkill VALUES('fuel lines and fuel cap gasket','9','E0003');
+INSERT INTO MechanicSkill VALUES('exterior light bulbs','3','E0003');
 INSERT INTO MechanicSkill VALUES('maintenance reminder light','7','E0004');
 INSERT INTO MechanicSkill VALUES('radiator and condenser','10','E0004');
 INSERT INTO MechanicSkill VALUES('exhaust system','8','E0004');
 INSERT INTO MechanicSkill VALUES('engine coolant','9','E0005');
 INSERT INTO MechanicSkill VALUES('engine oil and oil filter','9','E0005');
 INSERT INTO MechanicSkill VALUES('tires','8','E0005');
+INSERT INTO MechanicSkill VALUES('spark plugs','4','E0005');
 INSERT INTO MechanicSkill VALUES('fluid levels','10','E0006');
 INSERT INTO MechanicSkill VALUES('exhaust system','5','E0006');
 INSERT INTO MechanicSkill VALUES('exterior light bulbs','8','E0006');
+
+
+
+
+
 
 --Insert VALUES into Package Table
 --OK
