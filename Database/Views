@@ -33,6 +33,7 @@ FROM Mechanic mr INNER JOIN Mechanic me
 ON mr.empID = me.empId
 NATURAL JOIN Mentorship m
 LIMIT 9;
+
 SELECT * FROM Mechanic_mentor_v;
 
 --4---------------------------------------------------------------
