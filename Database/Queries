@@ -17,7 +17,9 @@ NATURAL JOIN Customer;
 ----------------------------------------------------------------------------------
 
 --3
-
+--3
+select c.custName,count(c.custName)*sv.cost as NetSpent from Customer c inner join Vehicle v on c.custID = v.custID inner join ServiceVisit sv
+on v.VIN = sv.VIN where sv.serviceDate > '2015-01-01' AND sv.serviceDate < '2017-01-01' group by c.custName;
 ----------------------------------------------------------------------------------
 
 --4
@@ -77,7 +79,8 @@ inner join PaymentHistory ph on p.custID=ph.custID group by c.custID limit 3 ;
 ----------------------------------------------------------------------------------
 
 --14
-
+select skillName, count(empID) as NumberOfEmployees from MechanicSkill group by skillName
+having count(empID) = 1 limit 3;
 ----------------------------------------------------------------------------------
 
 --15
@@ -89,7 +92,8 @@ WHERE Mechanic.empID=ServiceAdvisor.empID;
 ----------------------------------------------------------------------------------
 
 --16
-
+select VIN,make,model,mileage,maintenanceInterval,v.packageName from Vehicle v inner join 
+Package p on v.packageName = p.packageName;
 ----------------------------------------------------------------------------------
 
 --17
