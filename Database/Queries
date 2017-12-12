@@ -97,6 +97,11 @@ WHERE packageName IS NULL;
 
 --18
 --a.
+--Output mechanics that must mentor but have not 
+SELECT empName, mustMentor, hasMentored
+FROM Mechanic
+NATURAL JOIN Employee
+WHERE mustMentor = 1 AND hasMentored = 0;
 
 --b.
 
