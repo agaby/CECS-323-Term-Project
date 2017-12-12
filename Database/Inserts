@@ -82,11 +82,11 @@ INSERT INTO Existing(projectMileage, custID) VALUES( 14320, 'C000E'); --S
 -- Prospective
 --deadProspect, existingCustID, custID
 --OK
-INSERT INTO Prospective VALUES( null, 'C0000', 'C0006', '2014-01-05');
+INSERT INTO Prospective VALUES( null, 'C0000', 'C0006', '2017-01-05');
 INSERT INTO Prospective VALUES( null, 'C0001', 'C0007', '2017-01-08');
-INSERT INTO Prospective VALUES( null, 'C0002', 'C0008', '2012-08-08');
-INSERT INTO Prospective VALUES( null, 'C0003', 'C0009', '2014-06-01');
-INSERT INTO Prospective VALUES( null, 'C0004', 'C000A', '2010-10-10');
+INSERT INTO Prospective VALUES( null, 'C0002', 'C0008', '2017-08-08');
+INSERT INTO Prospective VALUES( null, 'C0003', 'C0009', '2017-06-01');
+INSERT INTO Prospective VALUES( null, 'C0004', 'C000A', '2017-10-10');
 
 -- Contact
 --OK
