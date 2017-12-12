@@ -83,7 +83,11 @@ inner join PaymentHistory ph on p.custID=ph.custID group by c.custID limit 3 ;
 ----------------------------------------------------------------------------------
 
 --13
-
+select empName, count(m.empID) AS numMentoring from Employee e INNER JOIN Mechanic m ON e.empID= m.empID
+INNER JOIN Mentorship ON m.empID = Mentorship.mentorEmpID
+GROUP BY  e.empName
+ORDER BY numMentoring DESC
+LIMIT 1;
 ----------------------------------------------------------------------------------
 
 --14
