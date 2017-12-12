@@ -55,6 +55,8 @@ GROUP BY MechanicSkill.empID HAVING COUNT(MechanicSkill.empID) < 4;
 
 --9
 
+select custName, (ph.paid-p.fee) as 'difference' from Customer c inner join Premier p on c.custID=p.custID
+inner join PaymentHistory ph on p.custID=ph.custID where ph.payDate < '2017-12-31' ORDER BY difference DESC;
 ----------------------------------------------------------------------------------
 
 --10
