@@ -31,12 +31,9 @@ GROUP BY e.empID HAVING COUNT(skillName) >= 3;
 ----------------------------------------------------------------------------------
 
 --5
--- 5
-SELECT A.empID, B.empID, COUNT(A.skillName = B.skillName) as 'SkillsInCommon' FROM MechanicSkill A INNER JOIN
-MechanicSkill B
-ON A.skillName = B.skillName
-where A.empID>B.empID
-GROUP BY B.empID, A.empID  HAVING COUNT(A.skillName = B.skillName) > 2;
+--a
+
+--b
 
 ----------------------------------------------------------------------------------
 
@@ -130,5 +127,8 @@ NATURAL JOIN MechanicSkill
 WHERE skillLevel < 5;
 
 --c.
-
+SELECT E.custName, ExistingCustID, C.custName
+FROM Prospective
+NATURAL JOIN Existing E
+NATURAL JOIN Customer C;
 
