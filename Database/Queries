@@ -64,7 +64,8 @@ inner join PaymentHistory ph on p.custID=ph.custID where ph.payDate < '2017-12-3
 ----------------------------------------------------------------------------------
 
 --11
-
+SELECT custName, count(ph.paid) as'numTimes' FROM Customer c inner join Premier p on c.custID=p.custID 
+inner join PaymentHistory ph on p.custID=ph.custID group by c.custID limit 3 ;
 ----------------------------------------------------------------------------------
 
 --12
