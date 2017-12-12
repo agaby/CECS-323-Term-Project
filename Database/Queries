@@ -119,6 +119,11 @@ NATURAL JOIN Employee
 WHERE mustMentor = 1 AND hasMentored = 0;
 
 --b.
+SELECT empName, skillLevel
+FROM Employee
+NATURAL JOIN Mechanic
+NATURAL JOIN MechanicSkill
+WHERE skillLevel < 5;
 
 --c.
 
