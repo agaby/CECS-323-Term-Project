@@ -14,7 +14,11 @@ SELECT * FROM Customer_addresses_v;
 --Mechanic_mentor_v – reports all of the mentor/mentee relationships at Dave’s, sorted by the name of the mentor, 
 --then the name of the mentee.
 DROP VIEW Mechanic_mentor_v;
-CREATE VIEW Mechanic_mentor_v AS SELECT
+CREATE VIEW Mechanic_mentor_v AS SELECT 'Mentee' AS "Mentee", menteeEmpID, 'Mentor' AS "Mentor", mentorEmpID AS mentor, skillLearned
+    FROM Mechanic mr INNER JOIN Mechanic me
+    ON mr.empID = me.empId
+    NATURAL JOIN Mentorship m
+    LIMIT 9;
 SELECT * FROM Mechanic_mentor_v;
 
 --Premier_profits_v – On a year by year basis, show the premier customer’s outlay versus what they would have been 
