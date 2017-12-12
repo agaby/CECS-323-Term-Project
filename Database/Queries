@@ -127,8 +127,10 @@ NATURAL JOIN MechanicSkill
 WHERE skillLevel < 5;
 
 --c.
-SELECT E.custName, ExistingCustID, C.custName
-FROM Prospective
-NATURAL JOIN Existing E
-NATURAL JOIN Customer C;
+SELECT refferalDate, ExistingCustID, custName
+FROM Prospective p
+INNER JOIN Existing e
+ON e.custID = p.ExistingCustID
+INNER JOIN Customer c
+ON c.custID = p.custID;
 
