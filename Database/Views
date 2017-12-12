@@ -3,53 +3,62 @@
 --Customer_v - for each customer, indicate his or her name as well as 
 --the customer type (prospect, steady or premier) as well as the number of years that customer has been with us.
 DROP VIEW Customer_v;
+
 CREATE VIEW Customer_v AS 
 (SELECT 'Premier',custID,year(now()) - year(dateJoined) as YearsSpent from Premier) UNION
 (SELECT 'Steady',custID,year(now()) - year(dateJoined) as YearsSpent1 from Steady) UNION
 (SELECT 'Prospect',custID,existingCustID from Prospective);
+
 SELECT * FROM Customer_v;
 
---2
+--2---------------------------------------------------------------
 --Customer_addresses_v – for each customer, indicate whether they are an individual or a corporate account,
 --and display all of the addresses that we are managing for that customer.
 DROP VIEW Customer_addresses_v;
-CREATE VIEW Customer_addresses_v AS SELECT 'Corporation',addressType,address 
-from Corporation natural join Address UNION SELECT 'Private',custID,privateHomeAddress from Private;
+
+CREATE VIEW Customer_addresses_v AS 
+SELECT 'Corporation', addressType, address 
+FROM Corporation NATURAL JOIN Address UNION SELECT 'Private',custID,privateHomeAddress from Private;
 
 SELECT * FROM Customer_addresses_v;
 
---3
---echanic_mentor_v – reports all of the mentor/mentee relationships at Dave’s, sorted by the name of the mentor, 
+--3---------------------------------------------------------------
+--Mechanic_mentor_v – reports all of the mentor/mentee relationships at Dave’s, sorted by the name of the mentor, 
 --then the name of the mentee.
 DROP VIEW Mechanic_mentor_v;
-CREATE VIEW Mechanic_mentor_v AS SELECT 'Mentee' AS "Mentee", menteeEmpID, 'Mentor' AS "Mentor", mentorEmpID AS mentor, skillLearned
-    FROM Mechanic mr INNER JOIN Mechanic me
-    ON mr.empID = me.empId
-    NATURAL JOIN Mentorship m
-    LIMIT 9;
+
+CREATE VIEW Mechanic_mentor_v AS 
+SELECT 'Mentee' AS "Mentee", menteeEmpID, 'Mentor' AS "Mentor", mentorEmpID AS mentor, skillLearned
+FROM Mechanic mr INNER JOIN Mechanic me
+ON mr.empID = me.empId
+NATURAL JOIN Mentorship m
+LIMIT 9;
 SELECT * FROM Mechanic_mentor_v;
 
---4
+--4---------------------------------------------------------------
 --Premier_profits_v – On a year by year basis, show the premier customer’s outlay versus what they would have been 
 --charged for the services which they received had they merely been steady customers.
 DROP VIEW Premier_profits_v;
+
 CREATE VIEW Premier_profits_v AS
 select c.custName,sv.cost,count(serviceDate) as NumberOfVisits,
 sv.cost*count(serviceDate) as TotalCost,count(serviceDate)*sv.cost*count(serviceDate)
 as WouldHavePaid from Customer c inner join Premier p on c.custID = p.custID 
 inner join Vehicle v on p.custID = v.custID 
 inner join ServiceVisit sv on sv.VIN = v.VIN group by p.custID;
+
 SELECT * FROM Premier_profits_v;
 
---5
+--5---------------------------------------------------------------
 --Prospective_resurrection_V - List all of the prospective customers who have had three or more contacts, and for whom
 --the most recent contact was more than a year ago. They might be ripe for another attempt
 DROP VIEW Prospective_resurrection_v;
+
 CREATE VIEW Prospective_resurrection_v AS 
 SELECT custname, year(now()) - year(refferalDate) as TimeSinceRefferal, COUNT(dateContact) AS NumOfContacts
 FROM Prospective 
-NATURAL JOIN Customer 
-NATURAL JOIN Contact
+NATURAL JOIN Customer NATURAL JOIN Contact
 WHERE refferalDate < '2014-12-12' 
 GROUP BY custID;
+
 SELECT * FROM Prospective_resurrection_v;
