@@ -127,10 +127,12 @@ NATURAL JOIN MechanicSkill
 WHERE skillLevel < 5;
 
 --c.
-SELECT refferalDate, ExistingCustID, custName
+--Output the customers whose perks have expired
+SELECT refferalDate, ExistingCustID, custName, week(now()) - week(refferalDate) AS 'Time Limit'
 FROM Prospective p
 INNER JOIN Existing e
 ON e.custID = p.ExistingCustID
 INNER JOIN Customer c
-ON c.custID = p.custID;
+ON c.custID = p.custID
+WHERE week(now()) - week(refferalDate) >= 5;
 
