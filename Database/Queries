@@ -63,6 +63,14 @@ inner join PaymentHistory ph on p.custID=ph.custID where ph.payDate < '2017-12-3
 
 --10
 
+SELECT custName, ph.paid as 'total' FROM Customer INNER JOIN Steady
+ON Customer.custID = Steady.custID
+inner join PaymentHistory ph on Steady.custID=ph.custID
+ORDER BY total DESC;
+
+SELECT c.custID, custName, ph.paid as 'total' FROM Customer c
+inner join PaymentHistory ph on c.custID=ph.custID
+ORDER BY total DESC;
 ----------------------------------------------------------------------------------
 
 --11
