@@ -119,7 +119,8 @@ NATURAL JOIN Employee
 WHERE mustMentor = 1 AND hasMentored = 0;
 
 --b.
-SELECT empName, skillLevel
+--Output mechanics who needs to be mentored to level up in a skill
+SELECT empName, skillName, skillLevel
 FROM Employee
 NATURAL JOIN Mechanic
 NATURAL JOIN MechanicSkill
