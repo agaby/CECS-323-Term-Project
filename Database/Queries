@@ -31,9 +31,12 @@ GROUP BY e.empID HAVING COUNT(skillName) >= 3;
 ----------------------------------------------------------------------------------
 
 --5
---a
-
---b
+-- 5
+SELECT A.empID, B.empID, COUNT(A.skillName = B.skillName) as 'SkillsInCommon' FROM MechanicSkill A INNER JOIN
+MechanicSkill B
+ON A.skillName = B.skillName
+where A.empID>B.empID
+GROUP BY B.empID, A.empID  HAVING COUNT(A.skillName = B.skillName) > 2;
 
 ----------------------------------------------------------------------------------
 
